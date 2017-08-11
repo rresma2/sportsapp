@@ -1,0 +1,5 @@
+Pods/*
+*xcuserdata*
+*xcschemes*
+*.xcscheme
+*.xcworkspacedata

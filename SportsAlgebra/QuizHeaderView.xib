@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuizHeaderView" customModule="SportsAlgebra" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h3-Ih-7to">
+                    <rect key="frame" x="16" y="20" width="345" height="60"/>
+                    <attributedString key="attributedText">
+                        <fragment content="What is the name of the first president of the United States of America?">
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="5h3-Ih-7to" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="3gc-Dr-Xdi"/>
+                <constraint firstAttribute="bottom" secondItem="5h3-Ih-7to" secondAttribute="bottom" constant="20" id="Gsu-TX-i2C"/>
+                <constraint firstItem="5h3-Ih-7to" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="hi3-lb-3rA"/>
+                <constraint firstAttribute="trailing" secondItem="5h3-Ih-7to" secondAttribute="trailing" constant="16" id="sA6-kR-ozN"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headerLabel" destination="5h3-Ih-7to" id="AfM-Iu-mIX"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="-229"/>
+        </view>
+    </objects>
+</document>

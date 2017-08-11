@@ -34,5 +34,31 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb110375152938048</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>110375152938048</string>
+	<key>FacebookDisplayName</key>
+	<string>SportsQuizApp</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FiraMono-Bold.otf</string>
+		<string>FiraMono-Medium.otf</string>
+		<string>FiraMono-Regular.otf</string>
+	</array>
 </dict>
 </plist>

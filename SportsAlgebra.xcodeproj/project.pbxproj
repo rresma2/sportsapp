@@ -7,13 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B82EC8A8E0218A35FB19E58 /* libPods-SportsAlgebra.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8682A912465FFDA676467568 /* libPods-SportsAlgebra.a */; };
 		A5287C8C1F06C18A00466BCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5287C8B1F06C18A00466BCB /* AppDelegate.swift */; };
-		A5287C8E1F06C18A00466BCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5287C8D1F06C18A00466BCB /* ViewController.swift */; };
 		A5287C911F06C18A00466BCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5287C8F1F06C18A00466BCB /* Main.storyboard */; };
 		A5287C931F06C18A00466BCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5287C921F06C18A00466BCB /* Assets.xcassets */; };
 		A5287C961F06C18A00466BCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5287C941F06C18A00466BCB /* LaunchScreen.storyboard */; };
 		A5287CA11F06C18B00466BCB /* SportsAlgebraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5287CA01F06C18B00466BCB /* SportsAlgebraTests.swift */; };
 		A5287CAC1F06C18B00466BCB /* SportsAlgebraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5287CAB1F06C18B00466BCB /* SportsAlgebraUITests.swift */; };
+		A5287CBD1F06C1C200466BCB /* Theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = A5287CBC1F06C1C200466BCB /* Theme.plist */; };
+		A5287CBF1F06C1DF00466BCB /* SAThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5287CBE1F06C1DF00466BCB /* SAThemeService.swift */; };
+		A5287CC31F06C24800466BCB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5287CC21F06C24800466BCB /* Question.swift */; };
+		A5287CC51F06C2A300466BCB /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5287CC41F06C2A300466BCB /* Answer.swift */; };
+		A5287CC71F06C2BC00466BCB /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5287CC61F06C2BC00466BCB /* Quiz.swift */; };
+		A5287CCA1F06C3E200466BCB /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5287CC91F06C3E200466BCB /* WebServiceManager.swift */; };
+		A5287CCE1F11B03600466BCB /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5287CCD1F11B03600466BCB /* UIColor+Extensions.swift */; };
+		A5287CD01F11B52800466BCB /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5287CCF1F11B52800466BCB /* SplashScreenViewController.swift */; };
+		A564E00F1F1AD81C0025D451 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564E00E1F1AD81C0025D451 /* QuizViewController.swift */; };
+		A564E0111F1AD83D0025D451 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564E0101F1AD83D0025D451 /* HomeViewController.swift */; };
+		A564E0141F1AEE780025D451 /* QuizHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564E0131F1AEE780025D451 /* QuizHeaderView.swift */; };
+		A564E0161F1AEE9F0025D451 /* QuizHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A564E0151F1AEE9F0025D451 /* QuizHeaderView.xib */; };
+		A564E01A1F1AF00B0025D451 /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564E0191F1AF00B0025D451 /* QuizTableViewCell.swift */; };
+		A564E01C1F1AF0230025D451 /* QuizTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A564E01B1F1AF0230025D451 /* QuizTableViewCell.xib */; };
+		A564E01E1F1AF4EC0025D451 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564E01D1F1AF4EC0025D451 /* QuizViewModel.swift */; };
+		A564E0201F1AFEB30025D451 /* QuizGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564E01F1F1AFEB30025D451 /* QuizGenerator.swift */; };
+		A564E0221F1AFECA0025D451 /* FirstQuizGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564E0211F1AFECA0025D451 /* FirstQuizGenerator.swift */; };
+		A564E0241F1B14650025D451 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564E0231F1B14650025D451 /* Event.swift */; };
+		A564E0261F1D1D2C0025D451 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A564E0251F1D1D2C0025D451 /* HomeViewModel.swift */; };
+		A59C25AA1F265E4B007F4EAD /* UserWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25A91F265E4B007F4EAD /* UserWebService.swift */; };
+		A59C25AC1F265E55007F4EAD /* QuizWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25AB1F265E55007F4EAD /* QuizWebService.swift */; };
+		A59C25AE1F285814007F4EAD /* SportsFeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25AD1F285814007F4EAD /* SportsFeedAPI.swift */; };
+		A59C25B01F29A9FF007F4EAD /* QuizResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25AF1F29A9FF007F4EAD /* QuizResults.swift */; };
+		A59C25B21F2A42D7007F4EAD /* QuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25B11F2A42D7007F4EAD /* QuestionResponse.swift */; };
+		A59C25B41F2A48C6007F4EAD /* QuestionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25B31F2A48C6007F4EAD /* QuestionDTO.swift */; };
+		A59C25B81F3AE152007F4EAD /* QuestionDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25B71F3AE152007F4EAD /* QuestionDTOTests.swift */; };
+		A59C25BA1F3D05BB007F4EAD /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59C25B91F3D05BB007F4EAD /* HomeHeaderView.xib */; };
+		A59C25BC1F3D0606007F4EAD /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25BB1F3D0606007F4EAD /* HomeHeaderView.swift */; };
+		A5CE343D1F1DC2B400AE5040 /* SAElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE343C1F1DC2B400AE5040 /* SAElapsedTimeView.swift */; };
+		A5CE343F1F1DC2F600AE5040 /* SAElapsedTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5CE343E1F1DC2F600AE5040 /* SAElapsedTimeView.xib */; };
+		A5CE34411F1E604C00AE5040 /* QuizContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE34401F1E604C00AE5040 /* QuizContext.swift */; };
+		A5CE34461F21181E00AE5040 /* QuizViewController+Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE34451F21181E00AE5040 /* QuizViewController+Observers.swift */; };
+		A5CE344B1F21185D00AE5040 /* OnboardingViewController+Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE344A1F21185D00AE5040 /* OnboardingViewController+Observers.swift */; };
+		A5D88E841F121D8D0088901B /* SAUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E831F121D8D0088901B /* SAUserDefaults.swift */; };
+		A5D88E891F12216F0088901B /* SASegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E881F12216F0088901B /* SASegue.swift */; };
+		A5D88E8B1F1222F30088901B /* SAStoryboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E8A1F1222F30088901B /* SAStoryboardFactory.swift */; };
+		A5D88E8F1F1288A40088901B /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E8E1F1288A40088901B /* FadeAnimator.swift */; };
+		A5D88E911F1288B60088901B /* SAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E901F1288B60088901B /* SAConstants.swift */; };
+		A5D88E931F128EAC0088901B /* SANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E921F128EAC0088901B /* SANavigationController.swift */; };
+		A5D88E951F1292D90088901B /* SAProvisioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E941F1292D90088901B /* SAProvisioning.swift */; };
+		A5D88E991F129C530088901B /* SAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E981F129C530088901B /* SAError.swift */; };
+		A5D88E9E1F12A9880088901B /* FiraMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5D88E9B1F12A90F0088901B /* FiraMono-Bold.otf */; };
+		A5D88E9F1F12A98B0088901B /* FiraMono-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5D88E9C1F12A90F0088901B /* FiraMono-Medium.otf */; };
+		A5D88EA01F12A98E0088901B /* FiraMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A5D88E9D1F12A90F0088901B /* FiraMono-Regular.otf */; };
+		A5D88EA21F13E7040088901B /* ScrollViewLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA11F13E7040088901B /* ScrollViewLayoutManager.swift */; };
+		A5D88EA41F1528400088901B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA31F1528400088901B /* LoginView.swift */; };
+		A5D88EA61F1528470088901B /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA51F1528470088901B /* LoginView.xib */; };
+		A5D88EA81F1528520088901B /* SignupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5D88EA71F1528520088901B /* SignupView.xib */; };
+		A5D88EAA1F15285E0088901B /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA91F15285E0088901B /* SignupView.swift */; };
+		A5D88EAC1F1534850088901B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EAB1F1534850088901B /* UIView+Extensions.swift */; };
+		A5D88EAE1F15A3E90088901B /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EAD1F15A3E90088901B /* OnboardingViewModel.swift */; };
+		A5D88EB01F15A50F0088901B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EAF1F15A50F0088901B /* OnboardingViewController.swift */; };
+		A5D88EB21F15AD420088901B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB11F15AD420088901B /* String+Extensions.swift */; };
+		A5D88EB41F15AF550088901B /* SALog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB31F15AF550088901B /* SALog.swift */; };
+		A5D88EB61F15B77A0088901B /* OnboardingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB51F15B77A0088901B /* OnboardingViewModelTests.swift */; };
+		A5D88EB81F1AB48A0088901B /* SAUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB71F1AB48A0088901B /* SAUtilities.swift */; };
+		A5D88EBA1F1AB4B60088901B /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB91F1AB4B60088901B /* Notification+Extensions.swift */; };
+		A5D88EBC1F1AB89D0088901B /* OnboardingFadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EBB1F1AB89D0088901B /* OnboardingFadeAnimator.swift */; };
+		A5D88EC21F1ACF1F0088901B /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EC01F1ACF1F0088901B /* SCLAlertView.swift */; };
+		A5D88EC31F1ACF1F0088901B /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EC11F1ACF1F0088901B /* SCLExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +94,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D426E7DBE8DD19A9FC72298 /* Pods-SportsAlgebra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsAlgebra.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportsAlgebra/Pods-SportsAlgebra.debug.xcconfig"; sourceTree = "<group>"; };
+		754629DF486F0061D04BACB1 /* Pods-SportsAlgebra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsAlgebra.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportsAlgebra/Pods-SportsAlgebra.release.xcconfig"; sourceTree = "<group>"; };
+		8682A912465FFDA676467568 /* libPods-SportsAlgebra.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SportsAlgebra.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5287C881F06C18A00466BCB /* SportsAlgebra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsAlgebra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5287C8B1F06C18A00466BCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5287C8D1F06C18A00466BCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A5287C901F06C18A00466BCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5287C921F06C18A00466BCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5287C951F06C18A00466BCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +109,68 @@
 		A5287CA71F06C18B00466BCB /* SportsAlgebraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsAlgebraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5287CAB1F06C18B00466BCB /* SportsAlgebraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsAlgebraUITests.swift; sourceTree = "<group>"; };
 		A5287CAD1F06C18B00466BCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5287CBC1F06C1C200466BCB /* Theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Theme.plist; sourceTree = "<group>"; };
+		A5287CBE1F06C1DF00466BCB /* SAThemeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAThemeService.swift; sourceTree = "<group>"; };
+		A5287CC21F06C24800466BCB /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		A5287CC41F06C2A300466BCB /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		A5287CC61F06C2BC00466BCB /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		A5287CC91F06C3E200466BCB /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
+		A5287CCD1F11B03600466BCB /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		A5287CCF1F11B52800466BCB /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		A564E00E1F1AD81C0025D451 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		A564E0101F1AD83D0025D451 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A564E0131F1AEE780025D451 /* QuizHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizHeaderView.swift; sourceTree = "<group>"; };
+		A564E0151F1AEE9F0025D451 /* QuizHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizHeaderView.xib; sourceTree = "<group>"; };
+		A564E0191F1AF00B0025D451 /* QuizTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
+		A564E01B1F1AF0230025D451 /* QuizTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizTableViewCell.xib; sourceTree = "<group>"; };
+		A564E01D1F1AF4EC0025D451 /* QuizViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		A564E01F1F1AFEB30025D451 /* QuizGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizGenerator.swift; sourceTree = "<group>"; };
+		A564E0211F1AFECA0025D451 /* FirstQuizGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstQuizGenerator.swift; sourceTree = "<group>"; };
+		A564E0231F1B14650025D451 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A564E0251F1D1D2C0025D451 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A59C25A91F265E4B007F4EAD /* UserWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWebService.swift; sourceTree = "<group>"; };
+		A59C25AB1F265E55007F4EAD /* QuizWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizWebService.swift; sourceTree = "<group>"; };
+		A59C25AD1F285814007F4EAD /* SportsFeedAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsFeedAPI.swift; sourceTree = "<group>"; };
+		A59C25AF1F29A9FF007F4EAD /* QuizResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResults.swift; sourceTree = "<group>"; };
+		A59C25B11F2A42D7007F4EAD /* QuestionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionResponse.swift; sourceTree = "<group>"; };
+		A59C25B31F2A48C6007F4EAD /* QuestionDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDTO.swift; sourceTree = "<group>"; };
+		A59C25B71F3AE152007F4EAD /* QuestionDTOTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDTOTests.swift; sourceTree = "<group>"; };
+		A59C25B91F3D05BB007F4EAD /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
+		A59C25BB1F3D0606007F4EAD /* HomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		A5CE343C1F1DC2B400AE5040 /* SAElapsedTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAElapsedTimeView.swift; sourceTree = "<group>"; };
+		A5CE343E1F1DC2F600AE5040 /* SAElapsedTimeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAElapsedTimeView.xib; sourceTree = "<group>"; };
+		A5CE34401F1E604C00AE5040 /* QuizContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizContext.swift; sourceTree = "<group>"; };
+		A5CE34451F21181E00AE5040 /* QuizViewController+Observers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "QuizViewController+Observers.swift"; sourceTree = "<group>"; };
+		A5CE344A1F21185D00AE5040 /* OnboardingViewController+Observers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+Observers.swift"; sourceTree = "<group>"; };
+		A5D88E831F121D8D0088901B /* SAUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAUserDefaults.swift; sourceTree = "<group>"; };
+		A5D88E881F12216F0088901B /* SASegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SASegue.swift; sourceTree = "<group>"; };
+		A5D88E8A1F1222F30088901B /* SAStoryboardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAStoryboardFactory.swift; sourceTree = "<group>"; };
+		A5D88E8E1F1288A40088901B /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
+		A5D88E901F1288B60088901B /* SAConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAConstants.swift; sourceTree = "<group>"; };
+		A5D88E921F128EAC0088901B /* SANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SANavigationController.swift; sourceTree = "<group>"; };
+		A5D88E941F1292D90088901B /* SAProvisioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAProvisioning.swift; sourceTree = "<group>"; };
+		A5D88E961F1293AC0088901B /* SportsAlgebra-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SportsAlgebra-Bridging-Header.h"; sourceTree = "<group>"; };
+		A5D88E981F129C530088901B /* SAError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAError.swift; sourceTree = "<group>"; };
+		A5D88E9B1F12A90F0088901B /* FiraMono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraMono-Bold.otf"; sourceTree = "<group>"; };
+		A5D88E9C1F12A90F0088901B /* FiraMono-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraMono-Medium.otf"; sourceTree = "<group>"; };
+		A5D88E9D1F12A90F0088901B /* FiraMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraMono-Regular.otf"; sourceTree = "<group>"; };
+		A5D88EA11F13E7040088901B /* ScrollViewLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewLayoutManager.swift; sourceTree = "<group>"; };
+		A5D88EA31F1528400088901B /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A5D88EA51F1528470088901B /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		A5D88EA71F1528520088901B /* SignupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupView.xib; sourceTree = "<group>"; };
+		A5D88EA91F15285E0088901B /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		A5D88EAB1F1534850088901B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A5D88EAD1F15A3E90088901B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		A5D88EAF1F15A50F0088901B /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		A5D88EB11F15AD420088901B /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		A5D88EB31F15AF550088901B /* SALog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SALog.swift; sourceTree = "<group>"; };
+		A5D88EB51F15B77A0088901B /* OnboardingViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelTests.swift; sourceTree = "<group>"; };
+		A5D88EB71F1AB48A0088901B /* SAUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAUtilities.swift; sourceTree = "<group>"; };
+		A5D88EB91F1AB4B60088901B /* Notification+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
+		A5D88EBB1F1AB89D0088901B /* OnboardingFadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFadeAnimator.swift; sourceTree = "<group>"; };
+		A5D88EBD1F1ACE760088901B /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = "Pods/../build/Release-iphoneos/SCLAlertView/SCLAlertView.framework"; sourceTree = "<group>"; };
+		A5D88EC01F1ACF1F0088901B /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = "../../../../Downloads/SCLAlertView-Swift-master/SCLAlertView/SCLAlertView.swift"; sourceTree = "<group>"; };
+		A5D88EC11F1ACF1F0088901B /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCLExtensions.swift; path = "../../../../Downloads/SCLAlertView-Swift-master/SCLAlertView/SCLExtensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B82EC8A8E0218A35FB19E58 /* libPods-SportsAlgebra.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +199,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3136BF6B3ECAF4A24C97DAC1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D426E7DBE8DD19A9FC72298 /* Pods-SportsAlgebra.debug.xcconfig */,
+				754629DF486F0061D04BACB1 /* Pods-SportsAlgebra.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		82011C69383ED1FC9479AB19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88EBD1F1ACE760088901B /* SCLAlertView.framework */,
+				8682A912465FFDA676467568 /* libPods-SportsAlgebra.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A5287C7F1F06C18A00466BCB = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +224,8 @@
 				A5287C9F1F06C18B00466BCB /* SportsAlgebraTests */,
 				A5287CAA1F06C18B00466BCB /* SportsAlgebraUITests */,
 				A5287C891F06C18A00466BCB /* Products */,
+				3136BF6B3ECAF4A24C97DAC1 /* Pods */,
+				82011C69383ED1FC9479AB19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +242,20 @@
 		A5287C8A1F06C18A00466BCB /* SportsAlgebra */ = {
 			isa = PBXGroup;
 			children = (
+				A5CE343B1F1DC2A900AE5040 /* CustomViews */,
+				A5D88EBF1F1ACF020088901B /* SCLAlertView */,
+				A5D88E971F129C4A0088901B /* Model */,
+				A5287CCB1F11B02100466BCB /* Common */,
+				A5287CC81F06C3D600466BCB /* WebService */,
+				A5287CC11F06C23200466BCB /* Quiz */,
+				A5287CC01F06C20500466BCB /* ViewController */,
+				A5287CBB1F06C1AA00466BCB /* Theming */,
 				A5287C8B1F06C18A00466BCB /* AppDelegate.swift */,
-				A5287C8D1F06C18A00466BCB /* ViewController.swift */,
 				A5287C8F1F06C18A00466BCB /* Main.storyboard */,
 				A5287C921F06C18A00466BCB /* Assets.xcassets */,
 				A5287C941F06C18A00466BCB /* LaunchScreen.storyboard */,
 				A5287C971F06C18A00466BCB /* Info.plist */,
+				A5D88E961F1293AC0088901B /* SportsAlgebra-Bridging-Header.h */,
 			);
 			path = SportsAlgebra;
 			sourceTree = "<group>";
@@ -112,6 +265,8 @@
 			children = (
 				A5287CA01F06C18B00466BCB /* SportsAlgebraTests.swift */,
 				A5287CA21F06C18B00466BCB /* Info.plist */,
+				A5D88EB51F15B77A0088901B /* OnboardingViewModelTests.swift */,
+				A59C25B71F3AE152007F4EAD /* QuestionDTOTests.swift */,
 			);
 			path = SportsAlgebraTests;
 			sourceTree = "<group>";
@@ -125,6 +280,208 @@
 			path = SportsAlgebraUITests;
 			sourceTree = "<group>";
 		};
+		A5287CBB1F06C1AA00466BCB /* Theming */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88E9A1F12A9050088901B /* Fonts */,
+				A5287CBC1F06C1C200466BCB /* Theme.plist */,
+				A5287CBE1F06C1DF00466BCB /* SAThemeService.swift */,
+			);
+			name = Theming;
+			sourceTree = "<group>";
+		};
+		A5287CC01F06C20500466BCB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A564E00D1F1AD6CD0025D451 /* Quiz */,
+				A564E00C1F1AD6C80025D451 /* Home */,
+				A5D88E851F121FAD0088901B /* Animation */,
+				A5D88E801F121CD40088901B /* Onboarding */,
+				A5287CD21F11B97100466BCB /* Navigation */,
+				A5287CD11F11B96D00466BCB /* Splash */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		A5287CC11F06C23200466BCB /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				A5287CC21F06C24800466BCB /* Question.swift */,
+				A59C25B31F2A48C6007F4EAD /* QuestionDTO.swift */,
+				A59C25B11F2A42D7007F4EAD /* QuestionResponse.swift */,
+				A5287CC41F06C2A300466BCB /* Answer.swift */,
+				A5287CC61F06C2BC00466BCB /* Quiz.swift */,
+				A59C25AF1F29A9FF007F4EAD /* QuizResults.swift */,
+				A5CE34401F1E604C00AE5040 /* QuizContext.swift */,
+			);
+			name = Quiz;
+			sourceTree = "<group>";
+		};
+		A5287CC81F06C3D600466BCB /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				A5287CC91F06C3E200466BCB /* WebServiceManager.swift */,
+				A5D88E941F1292D90088901B /* SAProvisioning.swift */,
+				A59C25A91F265E4B007F4EAD /* UserWebService.swift */,
+				A59C25AB1F265E55007F4EAD /* QuizWebService.swift */,
+				A59C25AD1F285814007F4EAD /* SportsFeedAPI.swift */,
+			);
+			name = WebService;
+			sourceTree = "<group>";
+		};
+		A5287CCB1F11B02100466BCB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A5287CCC1F11B02B00466BCB /* Extension */,
+				A5D88E831F121D8D0088901B /* SAUserDefaults.swift */,
+				A5D88E881F12216F0088901B /* SASegue.swift */,
+				A5D88E8A1F1222F30088901B /* SAStoryboardFactory.swift */,
+				A5D88E901F1288B60088901B /* SAConstants.swift */,
+				A5D88EB31F15AF550088901B /* SALog.swift */,
+				A5D88EB71F1AB48A0088901B /* SAUtilities.swift */,
+				A564E01F1F1AFEB30025D451 /* QuizGenerator.swift */,
+				A564E0211F1AFECA0025D451 /* FirstQuizGenerator.swift */,
+				A564E0231F1B14650025D451 /* Event.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		A5287CCC1F11B02B00466BCB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A5287CCD1F11B03600466BCB /* UIColor+Extensions.swift */,
+				A5D88EAB1F1534850088901B /* UIView+Extensions.swift */,
+				A5D88EB11F15AD420088901B /* String+Extensions.swift */,
+				A5D88EB91F1AB4B60088901B /* Notification+Extensions.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		A5287CD11F11B96D00466BCB /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A5287CCF1F11B52800466BCB /* SplashScreenViewController.swift */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
+		A5287CD21F11B97100466BCB /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88E921F128EAC0088901B /* SANavigationController.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		A564E00C1F1AD6C80025D451 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A564E0101F1AD83D0025D451 /* HomeViewController.swift */,
+				A564E0251F1D1D2C0025D451 /* HomeViewModel.swift */,
+				A59C25B91F3D05BB007F4EAD /* HomeHeaderView.xib */,
+				A59C25BB1F3D0606007F4EAD /* HomeHeaderView.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		A564E00D1F1AD6CD0025D451 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				A5CE34421F2117F700AE5040 /* Extension */,
+				A564E0121F1AEE6D0025D451 /* View */,
+				A564E00E1F1AD81C0025D451 /* QuizViewController.swift */,
+				A564E01D1F1AF4EC0025D451 /* QuizViewModel.swift */,
+			);
+			name = Quiz;
+			sourceTree = "<group>";
+		};
+		A564E0121F1AEE6D0025D451 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A564E0131F1AEE780025D451 /* QuizHeaderView.swift */,
+				A564E0151F1AEE9F0025D451 /* QuizHeaderView.xib */,
+				A564E0191F1AF00B0025D451 /* QuizTableViewCell.swift */,
+				A564E01B1F1AF0230025D451 /* QuizTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A5CE343B1F1DC2A900AE5040 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				A5CE343C1F1DC2B400AE5040 /* SAElapsedTimeView.swift */,
+				A5CE343E1F1DC2F600AE5040 /* SAElapsedTimeView.xib */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		A5CE34421F2117F700AE5040 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A5CE34451F21181E00AE5040 /* QuizViewController+Observers.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		A5CE34471F21183700AE5040 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A5CE344A1F21185D00AE5040 /* OnboardingViewController+Observers.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		A5D88E801F121CD40088901B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A5CE34471F21183700AE5040 /* Extension */,
+				A5D88EAF1F15A50F0088901B /* OnboardingViewController.swift */,
+				A5D88EAD1F15A3E90088901B /* OnboardingViewModel.swift */,
+				A5D88EA31F1528400088901B /* LoginView.swift */,
+				A5D88EA51F1528470088901B /* LoginView.xib */,
+				A5D88EA91F15285E0088901B /* SignupView.swift */,
+				A5D88EA71F1528520088901B /* SignupView.xib */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		A5D88E851F121FAD0088901B /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88E8E1F1288A40088901B /* FadeAnimator.swift */,
+				A5D88EBB1F1AB89D0088901B /* OnboardingFadeAnimator.swift */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
+		A5D88E971F129C4A0088901B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88E981F129C530088901B /* SAError.swift */,
+				A5D88EA11F13E7040088901B /* ScrollViewLayoutManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A5D88E9A1F12A9050088901B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88E9B1F12A90F0088901B /* FiraMono-Bold.otf */,
+				A5D88E9C1F12A90F0088901B /* FiraMono-Medium.otf */,
+				A5D88E9D1F12A90F0088901B /* FiraMono-Regular.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		A5D88EBF1F1ACF020088901B /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88EC01F1ACF1F0088901B /* SCLAlertView.swift */,
+				A5D88EC11F1ACF1F0088901B /* SCLExtensions.swift */,
+			);
+			name = SCLAlertView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +489,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5287CB01F06C18B00466BCB /* Build configuration list for PBXNativeTarget "SportsAlgebra" */;
 			buildPhases = (
+				3A395CD8EBFAB762107689D1 /* [CP] Check Pods Manifest.lock */,
 				A5287C841F06C18A00466BCB /* Sources */,
 				A5287C851F06C18A00466BCB /* Frameworks */,
 				A5287C861F06C18A00466BCB /* Resources */,
+				2BC1A7FDA28BDF62B83112DC /* [CP] Embed Pods Frameworks */,
+				B070E8C52C5C4ED37C969DAC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,7 +554,7 @@
 					A5287C871F06C18A00466BCB = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 5V44FMNFC4;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					A5287C9B1F06C18B00466BCB = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -235,9 +595,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A564E0161F1AEE9F0025D451 /* QuizHeaderView.xib in Resources */,
+				A5287CBD1F06C1C200466BCB /* Theme.plist in Resources */,
+				A5D88E9E1F12A9880088901B /* FiraMono-Bold.otf in Resources */,
+				A5D88EA61F1528470088901B /* LoginView.xib in Resources */,
 				A5287C961F06C18A00466BCB /* LaunchScreen.storyboard in Resources */,
+				A59C25BA1F3D05BB007F4EAD /* HomeHeaderView.xib in Resources */,
+				A564E01C1F1AF0230025D451 /* QuizTableViewCell.xib in Resources */,
+				A5CE343F1F1DC2F600AE5040 /* SAElapsedTimeView.xib in Resources */,
+				A5D88EA01F12A98E0088901B /* FiraMono-Regular.otf in Resources */,
+				A5D88EA81F1528520088901B /* SignupView.xib in Resources */,
 				A5287C931F06C18A00466BCB /* Assets.xcassets in Resources */,
 				A5287C911F06C18A00466BCB /* Main.storyboard in Resources */,
+				A5D88E9F1F12A98B0088901B /* FiraMono-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,13 +627,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2BC1A7FDA28BDF62B83112DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportsAlgebra/Pods-SportsAlgebra-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A395CD8EBFAB762107689D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B070E8C52C5C4ED37C969DAC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SportsAlgebra/Pods-SportsAlgebra-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5287C841F06C18A00466BCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5287C8E1F06C18A00466BCB /* ViewController.swift in Sources */,
+				A5D88EAA1F15285E0088901B /* SignupView.swift in Sources */,
+				A5D88EC31F1ACF1F0088901B /* SCLExtensions.swift in Sources */,
+				A564E0111F1AD83D0025D451 /* HomeViewController.swift in Sources */,
+				A5287CCA1F06C3E200466BCB /* WebServiceManager.swift in Sources */,
+				A5D88EBA1F1AB4B60088901B /* Notification+Extensions.swift in Sources */,
+				A59C25AE1F285814007F4EAD /* SportsFeedAPI.swift in Sources */,
+				A5D88E911F1288B60088901B /* SAConstants.swift in Sources */,
+				A5287CC31F06C24800466BCB /* Question.swift in Sources */,
+				A564E0221F1AFECA0025D451 /* FirstQuizGenerator.swift in Sources */,
+				A59C25AA1F265E4B007F4EAD /* UserWebService.swift in Sources */,
+				A564E0201F1AFEB30025D451 /* QuizGenerator.swift in Sources */,
+				A5D88E891F12216F0088901B /* SASegue.swift in Sources */,
+				A59C25BC1F3D0606007F4EAD /* HomeHeaderView.swift in Sources */,
+				A5287CD01F11B52800466BCB /* SplashScreenViewController.swift in Sources */,
+				A59C25B21F2A42D7007F4EAD /* QuestionResponse.swift in Sources */,
+				A5287CCE1F11B03600466BCB /* UIColor+Extensions.swift in Sources */,
+				A5287CC71F06C2BC00466BCB /* Quiz.swift in Sources */,
+				A5D88E991F129C530088901B /* SAError.swift in Sources */,
+				A5D88EAC1F1534850088901B /* UIView+Extensions.swift in Sources */,
+				A5D88EBC1F1AB89D0088901B /* OnboardingFadeAnimator.swift in Sources */,
+				A564E0241F1B14650025D451 /* Event.swift in Sources */,
+				A5CE344B1F21185D00AE5040 /* OnboardingViewController+Observers.swift in Sources */,
+				A59C25AC1F265E55007F4EAD /* QuizWebService.swift in Sources */,
+				A5D88E841F121D8D0088901B /* SAUserDefaults.swift in Sources */,
+				A5CE34411F1E604C00AE5040 /* QuizContext.swift in Sources */,
+				A5D88EB81F1AB48A0088901B /* SAUtilities.swift in Sources */,
+				A564E0261F1D1D2C0025D451 /* HomeViewModel.swift in Sources */,
+				A5D88E8F1F1288A40088901B /* FadeAnimator.swift in Sources */,
+				A564E01A1F1AF00B0025D451 /* QuizTableViewCell.swift in Sources */,
+				A5D88EB41F15AF550088901B /* SALog.swift in Sources */,
+				A5287CC51F06C2A300466BCB /* Answer.swift in Sources */,
+				A59C25B01F29A9FF007F4EAD /* QuizResults.swift in Sources */,
+				A5CE34461F21181E00AE5040 /* QuizViewController+Observers.swift in Sources */,
+				A5D88EAE1F15A3E90088901B /* OnboardingViewModel.swift in Sources */,
+				A5D88E8B1F1222F30088901B /* SAStoryboardFactory.swift in Sources */,
+				A5287CBF1F06C1DF00466BCB /* SAThemeService.swift in Sources */,
+				A564E00F1F1AD81C0025D451 /* QuizViewController.swift in Sources */,
 				A5287C8C1F06C18A00466BCB /* AppDelegate.swift in Sources */,
+				A5D88EA21F13E7040088901B /* ScrollViewLayoutManager.swift in Sources */,
+				A5D88EB01F15A50F0088901B /* OnboardingViewController.swift in Sources */,
+				A5D88EB21F15AD420088901B /* String+Extensions.swift in Sources */,
+				A5D88E951F1292D90088901B /* SAProvisioning.swift in Sources */,
+				A564E0141F1AEE780025D451 /* QuizHeaderView.swift in Sources */,
+				A5D88EA41F1528400088901B /* LoginView.swift in Sources */,
+				A59C25B41F2A48C6007F4EAD /* QuestionDTO.swift in Sources */,
+				A564E01E1F1AF4EC0025D451 /* QuizViewModel.swift in Sources */,
+				A5D88EC21F1ACF1F0088901B /* SCLAlertView.swift in Sources */,
+				A5CE343D1F1DC2B400AE5040 /* SAElapsedTimeView.swift in Sources */,
+				A5D88E931F128EAC0088901B /* SANavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +737,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5287CA11F06C18B00466BCB /* SportsAlgebraTests.swift in Sources */,
+				A59C25B81F3AE152007F4EAD /* QuestionDTOTests.swift in Sources */,
+				A5D88EB61F15B77A0088901B /* OnboardingViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,26 +880,38 @@
 		};
 		A5287CB11F06C18B00466BCB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D426E7DBE8DD19A9FC72298 /* Pods-SportsAlgebra.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5V44FMNFC4;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SportsAlgebra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rresma.SportsAlgebra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d47163c7-45f4-433d-96d2-c4ef74beddb2";
+				PROVISIONING_PROFILE_SPECIFIER = SportsAppDev;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SportsAlgebra/SportsAlgebra-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		A5287CB21F06C18B00466BCB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 754629DF486F0061D04BACB1 /* Pods-SportsAlgebra.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 5V44FMNFC4;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SportsAlgebra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rresma.SportsAlgebra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "16df8b5e-a779-4cc5-b399-5d3ff31e439e";
+				PROVISIONING_PROFILE_SPECIFIER = SportsAppDistribution;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SportsAlgebra/SportsAlgebra-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -514,6 +993,7 @@
 				A5287CB21F06C18B00466BCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5287CB31F06C18B00466BCB /* Build configuration list for PBXNativeTarget "SportsAlgebraTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +1002,7 @@
 				A5287CB51F06C18B00466BCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5287CB61F06C18B00466BCB /* Build configuration list for PBXNativeTarget "SportsAlgebraUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +1011,7 @@
 				A5287CB81F06C18B00466BCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
