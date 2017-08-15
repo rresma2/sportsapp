@@ -1,4 +1,5 @@
 Pods/*
+Podfile.lock
 *xcuserdata*
 *xcschemes*
 *.xcscheme

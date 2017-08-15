@@ -76,8 +76,8 @@
 		A5D88EB81F1AB48A0088901B /* SAUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB71F1AB48A0088901B /* SAUtilities.swift */; };
 		A5D88EBA1F1AB4B60088901B /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB91F1AB4B60088901B /* Notification+Extensions.swift */; };
 		A5D88EBC1F1AB89D0088901B /* OnboardingFadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EBB1F1AB89D0088901B /* OnboardingFadeAnimator.swift */; };
-		A5D88EC21F1ACF1F0088901B /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EC01F1ACF1F0088901B /* SCLAlertView.swift */; };
-		A5D88EC31F1ACF1F0088901B /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EC11F1ACF1F0088901B /* SCLExtensions.swift */; };
+		A6E7D57A1F43777400041252 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7D5781F43777400041252 /* SCLAlertView.swift */; };
+		A6E7D57B1F43777400041252 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7D5791F43777400041252 /* SCLExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,8 +177,8 @@
 		A5D88EB91F1AB4B60088901B /* Notification+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 		A5D88EBB1F1AB89D0088901B /* OnboardingFadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFadeAnimator.swift; sourceTree = "<group>"; };
 		A5D88EBD1F1ACE760088901B /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = "Pods/../build/Release-iphoneos/SCLAlertView/SCLAlertView.framework"; sourceTree = "<group>"; };
-		A5D88EC01F1ACF1F0088901B /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = "../../../../Downloads/SCLAlertView-Swift-master/SCLAlertView/SCLAlertView.swift"; sourceTree = "<group>"; };
-		A5D88EC11F1ACF1F0088901B /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SCLExtensions.swift; path = "../../../../Downloads/SCLAlertView-Swift-master/SCLAlertView/SCLExtensions.swift"; sourceTree = "<group>"; };
+		A6E7D5781F43777400041252 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		A6E7D5791F43777400041252 /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,8 +488,8 @@
 		A5D88EBF1F1ACF020088901B /* SCLAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				A5D88EC01F1ACF1F0088901B /* SCLAlertView.swift */,
-				A5D88EC11F1ACF1F0088901B /* SCLExtensions.swift */,
+				A6E7D5781F43777400041252 /* SCLAlertView.swift */,
+				A6E7D5791F43777400041252 /* SCLExtensions.swift */,
 			);
 			name = SCLAlertView;
 			sourceTree = "<group>";
@@ -668,7 +668,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B070E8C52C5C4ED37C969DAC /* [CP] Copy Pods Resources */ = {
@@ -694,9 +694,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5D88EAA1F15285E0088901B /* SignupView.swift in Sources */,
-				A5D88EC31F1ACF1F0088901B /* SCLExtensions.swift in Sources */,
 				A59C25C61F3FAF55007F4EAD /* HomeTableViewCell.swift in Sources */,
 				A564E0111F1AD83D0025D451 /* HomeViewController.swift in Sources */,
+				A6E7D57A1F43777400041252 /* SCLAlertView.swift in Sources */,
 				A5287CCA1F06C3E200466BCB /* WebServiceManager.swift in Sources */,
 				A5D88EBA1F1AB4B60088901B /* Notification+Extensions.swift in Sources */,
 				A5D88E911F1288B60088901B /* SAConstants.swift in Sources */,
@@ -722,6 +722,7 @@
 				A5CE34411F1E604C00AE5040 /* QuizContext.swift in Sources */,
 				A59C25BE1F3F5E45007F4EAD /* QuizResultsDTO.swift in Sources */,
 				A5D88EB81F1AB48A0088901B /* SAUtilities.swift in Sources */,
+				A6E7D57B1F43777400041252 /* SCLExtensions.swift in Sources */,
 				A564E0261F1D1D2C0025D451 /* HomeViewModel.swift in Sources */,
 				A5D88E8F1F1288A40088901B /* FadeAnimator.swift in Sources */,
 				A564E01A1F1AF00B0025D451 /* QuizTableViewCell.swift in Sources */,
@@ -742,7 +743,6 @@
 				A5D88EA41F1528400088901B /* LoginView.swift in Sources */,
 				A59C25B41F2A48C6007F4EAD /* QuestionDTO.swift in Sources */,
 				A564E01E1F1AF4EC0025D451 /* QuizViewModel.swift in Sources */,
-				A5D88EC21F1ACF1F0088901B /* SCLAlertView.swift in Sources */,
 				A5CE343D1F1DC2B400AE5040 /* SAElapsedTimeView.swift in Sources */,
 				A5D88E931F128EAC0088901B /* SANavigationController.swift in Sources */,
 			);
@@ -899,6 +899,7 @@
 			baseConfigurationReference = 6D426E7DBE8DD19A9FC72298 /* Pods-SportsAlgebra.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5V44FMNFC4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SportsAlgebra/Info.plist;
@@ -906,7 +907,7 @@
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rresma.SportsAlgebra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d47163c7-45f4-433d-96d2-c4ef74beddb2";
+				PROVISIONING_PROFILE = "5d890812-accb-4589-a43f-34d2a10abc72";
 				PROVISIONING_PROFILE_SPECIFIER = SportsAppDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SportsAlgebra/SportsAlgebra-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
