@@ -903,6 +903,7 @@
 				DEVELOPMENT_TEAM = 5V44FMNFC4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SportsAlgebra/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rresma.SportsAlgebra;
@@ -923,6 +924,7 @@
 				DEVELOPMENT_TEAM = 5V44FMNFC4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SportsAlgebra/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rresma.SportsAlgebra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
