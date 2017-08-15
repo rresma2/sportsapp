@@ -98,4 +98,28 @@ class SAStoryboardFactory {
         vc.viewModel = OnboardingViewModel()
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    
+    func presentQuizPrefaceViewController(in navigationController: UINavigationController?, with quiz: Quiz) {
+        guard let navigationController = navigationController else {
+            return
+        }
+        
+        let vc: QuizPrefaceViewController = self.instantiateViewController()
+        vc.quiz = quiz
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func presentQuizViewController(in navigationController: UINavigationController?, with quiz: Quiz) {
+        guard let navigationController = navigationController else {
+            return
+        }
+        
+        let vc: QuizViewController = self.instantiateViewController()
+        let context = QuizContext(timePerQuestion: 120.0)
+        vc.context = context
+        vc.viewModel = QuizViewModel(quiz: quiz,
+                                     context: context)
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

@@ -14,6 +14,7 @@ class QuizHeaderView: UITableViewHeaderFooterView {
     
     func configureFor(question: Question, context: QuizContext) {
         self.headerLabel.text = question.text
+        self.headerLabel.font = SAThemeService.shared.primaryFont(size: .primary)
         self.contentView.backgroundColor = .black
         self.context = context
     }

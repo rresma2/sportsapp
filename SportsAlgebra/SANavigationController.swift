@@ -35,13 +35,10 @@ extension SANavigationController: UINavigationControllerDelegate {
     }
     
     func navigationBarHiddenProperties(viewController: UIViewController) -> (Bool, Bool) {
-        let isHidden = isOnboarding(viewController: viewController)
-                        || viewController is QuizViewController
-                        || viewController is HomeViewController
         let shouldAnimate = isOnboarding(viewController: viewController)
                         || viewController is QuizViewController
                         || viewController is HomeViewController
-        return (isHidden, shouldAnimate)
+        return (true, shouldAnimate)
     }
     
     func isOnboarding(viewController: UIViewController) -> Bool {
@@ -58,5 +55,15 @@ extension SANavigationController: UIViewControllerTransitioningDelegate {
             return OnboardingFadeAnimator(duration: 0.2, transitionType: .dismissing)
         }
         return nil
+    }
+}
+
+extension UINavigationController {
+    func goHome() {
+        for controller in self.viewControllers {
+            if controller is HomeViewController {
+                self.popToViewController(controller, animated: true)
+            }
+        }
     }
 }

@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     
     // MARK: Subviews
     
+    @IBOutlet weak var homeHeaderView: HomeHeaderView!
     @IBOutlet weak var takeQuizButton: UIButton!
     @IBOutlet weak var homeTableView: UITableView! {
         willSet {
@@ -28,6 +29,23 @@ class HomeViewController: UIViewController {
     // MARK: IBAction
     
     @IBAction func takeQuizButtonTapped(_ sender: Any) {
-        viewModel.takeQuiz()
+        viewModel.loadQuiz(completion: { (quiz, error) in
+            if let error = error {
+                SALog(error.message)
+            } else if let quiz = quiz {
+                SAStoryboardFactory().presentQuizPrefaceViewController(in: self.navigationController, with: quiz)
+            }
+        })
+    }
+    
+    
+    // MARK: UIViewController
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        takeQuizButton.titleLabel?.font = SAThemeService.shared.primaryFont(size: .primary)
+        viewModel.fetchQuizResults()
+        homeHeaderView.configure(user: PFUser.current())
     }
 }

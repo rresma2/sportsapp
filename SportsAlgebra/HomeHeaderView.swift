@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeHeaderView: UITableViewHeaderFooterView {
+class HomeHeaderView: UIView {
     
     // MARK: IBOutlet
     
@@ -18,6 +18,10 @@ class HomeHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var statsButton: UIButton!
     @IBOutlet weak var rewardsButton: UIButton!
     
+    // MARK: Properties
+    
+    var user: PFUser?
+    
     // MARK: IBAction
     
     @IBAction func leftButtonTapped(_ sender: Any) {
@@ -26,27 +30,38 @@ class HomeHeaderView: UITableViewHeaderFooterView {
     @IBAction func rightButtonTapped(_ sender: Any) {
     }
     
-    // MARK: Init
+    // MARK: UIView
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override func awakeFromNib() {
+        headerLabel.font = SAThemeService.shared.mediumFont(size: .primary)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if let user = user, user.profileImageView != nil {
+            self.profileImageView.layer.cornerRadius = 0.0
+        } else {
+            self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2
+        }
     }
     
     // MARK: HomeHeaderView
     
-    func configure(user: PFUser) {
+    func configure(user: PFUser?) {
+        self.user = user
         
+        self.configureProfileImageFor(user: user)
     }
     
-    class var nib: UINib? {
-        return UINib(nibName: String(describing: HomeHeaderView.self), bundle: Bundle.main)
-    }
-    
-    class var defaultHeight: CGFloat {
-        return 104.0
+    func configureProfileImageFor(user: PFUser?) {
+        self.placeholderImageView.isHidden = user?.profileImageView != nil
+        self.profileImageView.layer.borderColor = UIColor.white.cgColor
+        self.profileImageView.layer.borderWidth = 1.0
+        self.profileImageView.layer.masksToBounds = true
+        self.rewardsButton.isUserInteractionEnabled = false
+        self.rewardsButton.alpha = 0.4
+        self.statsButton.isUserInteractionEnabled = false
+        self.statsButton.alpha = 0.4
     }
 }

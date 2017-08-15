@@ -39,7 +39,6 @@
 		A59C25B21F2A42D7007F4EAD /* QuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25B11F2A42D7007F4EAD /* QuestionResponse.swift */; };
 		A59C25B41F2A48C6007F4EAD /* QuestionDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25B31F2A48C6007F4EAD /* QuestionDTO.swift */; };
 		A59C25B81F3AE152007F4EAD /* QuestionDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25B71F3AE152007F4EAD /* QuestionDTOTests.swift */; };
-		A59C25BA1F3D05BB007F4EAD /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A59C25B91F3D05BB007F4EAD /* HomeHeaderView.xib */; };
 		A59C25BC1F3D0606007F4EAD /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25BB1F3D0606007F4EAD /* HomeHeaderView.swift */; };
 		A59C25BE1F3F5E45007F4EAD /* QuizResultsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25BD1F3F5E45007F4EAD /* QuizResultsDTO.swift */; };
 		A59C25C01F3F6016007F4EAD /* QuizDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59C25BF1F3F6016007F4EAD /* QuizDTO.swift */; };
@@ -78,6 +77,8 @@
 		A5D88EBC1F1AB89D0088901B /* OnboardingFadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EBB1F1AB89D0088901B /* OnboardingFadeAnimator.swift */; };
 		A6E7D57A1F43777400041252 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7D5781F43777400041252 /* SCLAlertView.swift */; };
 		A6E7D57B1F43777400041252 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7D5791F43777400041252 /* SCLExtensions.swift */; };
+		A6E7D5CE1F43986200041252 /* QuizPrefaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7D5CD1F43986200041252 /* QuizPrefaceViewController.swift */; };
+		A6E7D5D01F43A20400041252 /* TextFadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7D5CF1F43A20400041252 /* TextFadeAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,7 +139,6 @@
 		A59C25B11F2A42D7007F4EAD /* QuestionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionResponse.swift; sourceTree = "<group>"; };
 		A59C25B31F2A48C6007F4EAD /* QuestionDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDTO.swift; sourceTree = "<group>"; };
 		A59C25B71F3AE152007F4EAD /* QuestionDTOTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDTOTests.swift; sourceTree = "<group>"; };
-		A59C25B91F3D05BB007F4EAD /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		A59C25BB1F3D0606007F4EAD /* HomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		A59C25BD1F3F5E45007F4EAD /* QuizResultsDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultsDTO.swift; sourceTree = "<group>"; };
 		A59C25BF1F3F6016007F4EAD /* QuizDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizDTO.swift; sourceTree = "<group>"; };
@@ -179,6 +179,8 @@
 		A5D88EBD1F1ACE760088901B /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = "Pods/../build/Release-iphoneos/SCLAlertView/SCLAlertView.framework"; sourceTree = "<group>"; };
 		A6E7D5781F43777400041252 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		A6E7D5791F43777400041252 /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
+		A6E7D5CD1F43986200041252 /* QuizPrefaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizPrefaceViewController.swift; sourceTree = "<group>"; };
+		A6E7D5CF1F43A20400041252 /* TextFadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFadeAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 		A5287CC01F06C20500466BCB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A6E7D5CA1F43971800041252 /* QuizPreface */,
 				A564E00D1F1AD6CD0025D451 /* Quiz */,
 				A564E00C1F1AD6C80025D451 /* Home */,
 				A5D88E851F121FAD0088901B /* Animation */,
@@ -388,7 +391,6 @@
 			children = (
 				A564E0101F1AD83D0025D451 /* HomeViewController.swift */,
 				A564E0251F1D1D2C0025D451 /* HomeViewModel.swift */,
-				A59C25B91F3D05BB007F4EAD /* HomeHeaderView.xib */,
 				A59C25BB1F3D0606007F4EAD /* HomeHeaderView.swift */,
 				A59C25C31F3FAF42007F4EAD /* HomeTableViewCell.xib */,
 				A59C25C51F3FAF55007F4EAD /* HomeTableViewCell.swift */,
@@ -462,6 +464,7 @@
 			children = (
 				A5D88E8E1F1288A40088901B /* FadeAnimator.swift */,
 				A5D88EBB1F1AB89D0088901B /* OnboardingFadeAnimator.swift */,
+				A6E7D5CF1F43A20400041252 /* TextFadeAnimator.swift */,
 			);
 			name = Animation;
 			sourceTree = "<group>";
@@ -492,6 +495,14 @@
 				A6E7D5791F43777400041252 /* SCLExtensions.swift */,
 			);
 			name = SCLAlertView;
+			sourceTree = "<group>";
+		};
+		A6E7D5CA1F43971800041252 /* QuizPreface */ = {
+			isa = PBXGroup;
+			children = (
+				A6E7D5CD1F43986200041252 /* QuizPrefaceViewController.swift */,
+			);
+			name = QuizPreface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -612,7 +623,6 @@
 				A5D88E9E1F12A9880088901B /* FiraMono-Bold.otf in Resources */,
 				A5D88EA61F1528470088901B /* LoginView.xib in Resources */,
 				A5287C961F06C18A00466BCB /* LaunchScreen.storyboard in Resources */,
-				A59C25BA1F3D05BB007F4EAD /* HomeHeaderView.xib in Resources */,
 				A564E01C1F1AF0230025D451 /* QuizTableViewCell.xib in Resources */,
 				A5CE343F1F1DC2F600AE5040 /* SAElapsedTimeView.xib in Resources */,
 				A59C25C41F3FAF42007F4EAD /* HomeTableViewCell.xib in Resources */,
@@ -702,6 +712,7 @@
 				A5D88E911F1288B60088901B /* SAConstants.swift in Sources */,
 				A5287CC31F06C24800466BCB /* Question.swift in Sources */,
 				A564E0221F1AFECA0025D451 /* FirstQuizGenerator.swift in Sources */,
+				A6E7D5D01F43A20400041252 /* TextFadeAnimator.swift in Sources */,
 				A59C25AA1F265E4B007F4EAD /* UserWebService.swift in Sources */,
 				A564E0201F1AFEB30025D451 /* QuizGenerator.swift in Sources */,
 				A59C25C01F3F6016007F4EAD /* QuizDTO.swift in Sources */,
@@ -734,6 +745,7 @@
 				A5D88E8B1F1222F30088901B /* SAStoryboardFactory.swift in Sources */,
 				A5287CBF1F06C1DF00466BCB /* SAThemeService.swift in Sources */,
 				A564E00F1F1AD81C0025D451 /* QuizViewController.swift in Sources */,
+				A6E7D5CE1F43986200041252 /* QuizPrefaceViewController.swift in Sources */,
 				A5287C8C1F06C18A00466BCB /* AppDelegate.swift in Sources */,
 				A5D88EA21F13E7040088901B /* ScrollViewLayoutManager.swift in Sources */,
 				A5D88EB01F15A50F0088901B /* OnboardingViewController.swift in Sources */,

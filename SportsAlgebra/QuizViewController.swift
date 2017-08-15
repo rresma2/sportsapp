@@ -69,7 +69,6 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var timerWrapper: UIView!
-    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timerProgressBarWrapper: UIView!
     @IBOutlet weak var questionTableView: UITableView! {
         willSet {
@@ -117,7 +116,11 @@ class QuizViewController: UIViewController {
                                      height: timerProgressBarWrapper.frame.size.height)
         timerView.context = self.context
         self.timerView = timerView
+        self.timerView.timerLabel.font = SAThemeService.shared.primaryFont(size: .secondary)
         self.timerProgressBarWrapper.addSubview(timerView)
+        
+        self.questionLabel.font = SAThemeService.shared.primaryFont(size: .primary)
+        self.skipButton.titleLabel?.font = SAThemeService.shared.primaryFont(size: .primary)
         
         self.configureObservers()
     }

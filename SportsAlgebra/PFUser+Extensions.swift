@@ -81,6 +81,10 @@ extension PFUser {
         return self.object(forKey: "profileImageView") as? PFFile
     }
     
+    var name: String {
+        return self.object(forKey: "fullName") as? String ?? self.username ?? ""
+    }
+    
     func saveProfile(image: UIImage, completion: @escaping (Bool, SAError?) -> Void) {
         
         // create image data

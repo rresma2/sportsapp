@@ -25,19 +25,22 @@ class QuizTableViewCell: UITableViewCell {
         self.context = context
         self.backgroundColor = .black
         
+        answerLabel.font = SAThemeService.shared.primaryFont(size: .primary)
         answerLabel.text = answer.text
         answerLabel.isHidden = questionType.isInput
         answerTextField.isHidden = !questionType.isInput
-        if !answerTextField.isHidden {
-            answerTextField.becomeFirstResponder()
-        } else {
-            answerTextField.resignFirstResponder()
-        }
+        answerTextField.keyboardType = questionType == .numericInput ? .decimalPad : .default
         answerTextField.text = answer.text
         answerTextField.delegate = textFieldDelegate
         answerTextField.backgroundColor = questionType.isInput ? self.backgroundColor : .clear
         answerTextField.attributedPlaceholder = NSAttributedString(string: "Your answer", attributes: [NSForegroundColorAttributeName: UIColor(r: 250, g: 250, b: 250, a: 0.2)])
         answerTextField.textColor = .white
+        answerTextField.font = SAThemeService.shared.primaryFont(size: .primary)
+        if !answerTextField.isHidden {
+            answerTextField.becomeFirstResponder()
+        } else {
+            answerTextField.resignFirstResponder()
+        }
         
         iconWrapperView.isHidden = questionType.isInput ? true : !answer.isSelected
     }
