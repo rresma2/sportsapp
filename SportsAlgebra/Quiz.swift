@@ -8,11 +8,14 @@
 
 import Foundation
 
-class Quiz: PFObject {
+class Quiz {
     
     // MARK: Quiz Properties
     
     var questions: [Question]
+    var serverId: String?
+    var createdAt: Date?
+    var title: String?
     
     // MARK: Optimization
     
@@ -28,12 +31,27 @@ class Quiz: PFObject {
         return questions.map({ QuestionResponse(question: $0) })
     }
     
+    var numberCorrect: Int {
+        var count = 0
+        for question in questions {
+            if question.isCorrect {
+                count += 1
+            }
+        }
+        return count
+    }
+    
     // MARK: Init
     
     init(questions: [Question]) {
         self.questions = questions
-        
-        super.init()
+        self.title = questions.first?.quizTitle
+    }
+    
+    init(quizDTO: QuizDTO) throws {
+        self.questions = try quizDTO.questions.flatMap({ ($0 as? QuestionDTO) }).map({ try Question(questionDTO: $0) })
+        self.createdAt = quizDTO.createdAt
+        self.title = self.questions.first?.quizTitle
     }
     
     func questionFor(index: Int) -> Question? {
@@ -48,14 +66,5 @@ class Quiz: PFObject {
             SALog(question.userInput)
             SALog(question.userAnswers)
         }
-    }
-}
-
-extension Quiz: PFSubclassing {
-    /**
-     The name of the class as seen in the REST API.
-     */
-    static func parseClassName() -> String {
-        return "Quiz"
     }
 }

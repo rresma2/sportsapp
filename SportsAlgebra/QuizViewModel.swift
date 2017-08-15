@@ -28,7 +28,8 @@ class QuizViewModel: NSObject {
                     lastQuestion.questionType.isInput,
                     question.questionType.isInput,
                     let answer = question.answerFor(index: 0),
-                    let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? QuizTableViewCell {
+                    let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? QuizTableViewCell,
+                    let header = tableView.headerView(forSection: 0) as? QuizHeaderView {
                     
                     // we don't want to reload the entire table view because that dismisses the keyboard
                     
@@ -36,6 +37,7 @@ class QuizViewModel: NSObject {
                                    questionType: question.questionType,
                                    context: context,
                                    textFieldDelegate: self)
+                    header.configureFor(question: question, context: context)
                 } else {
                     tableView.reloadData()
                 }
@@ -185,9 +187,8 @@ extension QuizViewModel: UITextFieldDelegate {
             return false
         }
         
-        if let question = quiz.questionFor(index: currentQuestionIndex),
-            let result = textField.text {
-                question.userInput = result
+        if let question = quiz.questionFor(index: currentQuestionIndex) {
+            question.setUser(input: result)
         }
         return true
     }

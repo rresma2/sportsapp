@@ -9,9 +9,25 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    // MARK: Properties
+    
     var viewModel: HomeViewModel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: Subviews
+    
+    @IBOutlet weak var takeQuizButton: UIButton!
+    @IBOutlet weak var homeTableView: UITableView! {
+        willSet {
+            newValue.delegate = viewModel
+            newValue.dataSource = viewModel
+            viewModel.configure(tableView: newValue)
+        }
+    }
+    
+    // MARK: IBAction
+    
+    @IBAction func takeQuizButtonTapped(_ sender: Any) {
+        viewModel.takeQuiz()
     }
 }

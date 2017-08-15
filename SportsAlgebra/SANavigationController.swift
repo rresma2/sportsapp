@@ -35,8 +35,12 @@ extension SANavigationController: UINavigationControllerDelegate {
     }
     
     func navigationBarHiddenProperties(viewController: UIViewController) -> (Bool, Bool) {
-        let isHidden = isOnboarding(viewController: viewController) || viewController is QuizViewController
-        let shouldAnimate = isOnboarding(viewController: viewController) || viewController is QuizViewController
+        let isHidden = isOnboarding(viewController: viewController)
+                        || viewController is QuizViewController
+                        || viewController is HomeViewController
+        let shouldAnimate = isOnboarding(viewController: viewController)
+                        || viewController is QuizViewController
+                        || viewController is HomeViewController
         return (isHidden, shouldAnimate)
     }
     

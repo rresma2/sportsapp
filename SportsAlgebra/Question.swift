@@ -35,30 +35,30 @@ class Question {
     var timeLimit: TimeInterval?
     var questionType: QuestionType
     var questionSubject: QuestionSubject
+    var serverId: String?
     
     // MARK: User Properties
     
     var userAnswers: [Answer]
     var timeToAnswer: TimeInterval? = nil
     var gameId: String?
+    var gameTitle: String?
+    var gameLocation: String?
+    var gameDate: String?
     
     // MARK: Computer Properties
     
+    func setUser(input: String) {
+        if let firstAnswer = userAnswers.first {
+            firstAnswer.text = input
+        } else {
+            let firstAnswer = Answer(text: input)
+            userAnswers.append(firstAnswer)
+        }
+    }
     var userInput: String? {
         get {
             return userAnswers.first?.text
-        }
-        set {
-            guard let newValue = newValue else {
-                return
-            }
-            
-            if let firstAnswer = userAnswers.first {
-                firstAnswer.text = newValue
-            } else {
-                let firstAnswer = Answer(text: newValue)
-                userAnswers.append(firstAnswer)
-            }
         }
     }
     
@@ -79,6 +79,50 @@ class Question {
         return correctAnswers.flatMap({ $0.text })
     }
     
+    var tokens: [String] {
+        var result = [String]()
+        if let text = text {
+            result += text.components(separatedBy: CharacterSet.whitespacesAndNewlines)
+        }
+        
+        for answerText in answers.flatMap({ $0 }).flatMap({ $0.text }) {
+            result.append(answerText)
+        }
+        
+        return result
+    }
+    
+    var isCorrect: Bool {
+        guard let correctAnswers = correctAnswers else {
+            return true // No correct answers
+        }
+        
+        for answer in self.userAnswers.map({ $0.text }) {
+            var found = false
+            for correctAnswer in correctAnswers.map({ $0.text }) {
+                if answer == correctAnswer {
+                    found = true
+                }
+            }
+            
+            if !found {
+                return false
+            }
+        }
+        return true
+    }
+    
+    var quizTitle: String? {
+        switch self.questionSubject {
+        case .firstQuiz:
+            return "My First Quiz"
+        case .game:
+            return self.gameTitle
+        default:
+            return nil
+        }
+    }
+    
     // MARK: Init
     
     init(text: String, answers: [Answer],
@@ -94,7 +138,7 @@ class Question {
         self.timeLimit = timeLimit
     }
     
-    init?(questionDTO: QuestionDTO) throws {
+    init(questionDTO: QuestionDTO) throws {
         self.text = questionDTO.text
         self.answers = try questionDTO.getAnswerList()
         
@@ -111,10 +155,15 @@ class Question {
         }
         
         self.gameId = questionDTO.gameId ?? nil
+        self.gameDate = questionDTO.gameDate ?? nil
+        self.gameLocation = questionDTO.gameLocation ?? nil
+        self.gameDate = questionDTO.gameDate ?? nil
+        
         self.userAnswers = []
         self.isRequired = questionDTO.isRequired.boolValue
         self.timeLimit = questionDTO.timeLimit?.doubleValue
         self.correctAnswers = questionDTO.getCorrectAnswerList()
+        self.serverId = questionDTO.objectId
     }
     
     // MARK: Helper Methods

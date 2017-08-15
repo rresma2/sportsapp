@@ -52,7 +52,7 @@ class SAStoryboardFactory {
     }
     
     func presentFirstViewController(in navigationController: UINavigationController?) {
-        if SAUserDefaults.sharedInstance.boolFor(key: .hasUserTakenFirstQuiz) == false {
+        if PFUser.current()?.hasTakenFirstQuiz == false {
             SAStoryboardFactory().presentFirstQuizViewController(in: navigationController)
         } else {
             SAStoryboardFactory().presentHomeViewController(in: navigationController)
@@ -78,8 +78,14 @@ class SAStoryboardFactory {
             return
         }
         
+        guard let user = PFUser.current() else {
+            // TODO: Log out user since session is invalid
+            SALog("Current User is nil. Logging out")
+            return
+        }
+        
         let vc: HomeViewController = self.instantiateViewController()
-        vc.viewModel = HomeViewModel()
+        vc.viewModel = HomeViewModel(user: user)
         navigationController.pushViewController(vc, animated: true)
     }
     

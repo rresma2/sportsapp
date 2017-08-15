@@ -12,6 +12,7 @@ enum QuestionDTOError: Error {
     case invalidQuestionType
     case invalidQuestionSubject
     case invalidAnswerFormat
+    case noServerId
 }
 
 class QuestionDTO: PFObject {
@@ -22,7 +23,10 @@ class QuestionDTO: PFObject {
     @NSManaged var timeLimit: NSNumber?
     @NSManaged var questionType: NSNumber
     @NSManaged var questionSubject: NSNumber
-    @NSManaged var gameId: String!
+    @NSManaged var gameId: String?
+    @NSManaged var gameTitle: String?
+    @NSManaged var gameLocation: String?
+    @NSManaged var gameDate: String?
     
     override init() {
         super.init()
@@ -43,6 +47,19 @@ class QuestionDTO: PFObject {
         self.questionType = NSNumber(integerLiteral: question.questionType.rawValue)
         self.questionSubject = NSNumber(integerLiteral: question.questionSubject.rawValue)
         self.gameId = question.gameId
+        self.gameTitle = question.gameTitle
+        self.gameLocation = question.gameLocation
+        self.gameDate = question.gameDate
+    }
+    
+    init(objectId: String?) throws {
+        guard objectId != nil else {
+            throw QuestionDTOError.noServerId
+        }
+        
+        super.init()
+        
+        self.objectId = objectId
     }
     
     func getAnswerList() throws -> [Answer] {

@@ -38,12 +38,29 @@ class QuizViewController: UIViewController {
     }
     
     func quizFinished(quiz: Quiz) {
-        if context.isFirstQuiz {
-            SAUserDefaults.sharedInstance.set(bool: true, for: .hasUserTakenFirstQuiz)
-            // TODO: SAVE TO PARSE
+        guard let user = PFUser.current() else {
+            // TODO: DISPLAY SESSION INVALID ERROR AND LOG USER OUT
+            SALog("SESSION IS INVALID. LOGGING USER OUT")
+            return
         }
-        // TODO: Show Home View Controller
-        SAStoryboardFactory().presentHomeViewController(in: self.navigationController)
+        
+        if context.isFirstQuiz && PFUser.current()?.recordAnswersFromFirst(quiz: quiz) == true {
+            PFUser.current()?.saveInBackground(block: { (success, error) in
+                if success {
+                    SAStoryboardFactory().presentHomeViewController(in: self.navigationController)
+                } else {
+                    // TODO: Display a SOMETHING WENT WRONG ERROR (if in debug mode, display the debug error)
+                }
+            })
+        } else {
+            WebServiceManager.shared.quizWebService.save(quiz: quiz, for: user) { (success, error) in
+                if success {
+                    SAStoryboardFactory().presentHomeViewController(in: self.navigationController)
+                } else {
+                    // TODO: Display a SOMETHING WENT WRONG ERROR (if in debug mode, display the debug error)
+                }
+            }
+        }
     }
     
     // MARK: Subviews

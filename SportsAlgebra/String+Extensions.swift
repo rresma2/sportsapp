@@ -10,7 +10,6 @@ import Foundation
 
 extension String {
     var isAlphanumeric: Bool {
-        print(self)
         let range =  (self as NSString).rangeOfCharacter(from: CharacterSet.alphanumerics.inverted)
         return range.location == NSNotFound
     }

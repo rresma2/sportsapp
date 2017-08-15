@@ -16,7 +16,7 @@
                 <navigationController id="gkC-3f-oEQ" customClass="SANavigationController" customModule="SportsAlgebra" customModuleProvider="target" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z1K-S1-lol">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z1K-S1-lol">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -219,7 +219,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.078557744619999995" green="0.078557759520000006" blue="0.078557744619999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="dhY-rv-vxq" secondAttribute="trailing" constant="-16" id="5cj-iN-PBd"/>
                             <constraint firstItem="Ftf-9c-WEV" firstAttribute="top" secondItem="0IL-ww-l6D" secondAttribute="bottom" constant="-2" id="AEh-2a-xyp"/>
@@ -268,12 +268,12 @@
                                 </constraints>
                                 <state key="normal" title="Take Quiz"/>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dvF-cs-Baa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dvF-cs-Baa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.078557744619999995" green="0.078557759520000006" blue="0.078557744619999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="dvF-cs-Baa" firstAttribute="top" secondItem="dpt-OL-ciR" secondAttribute="bottom" constant="-20" id="Elj-jY-Bfc"/>
                             <constraint firstItem="cKr-UH-e1L" firstAttribute="top" secondItem="2FC-xF-Wof" secondAttribute="bottom" id="Hzf-q5-YWC"/>
@@ -284,6 +284,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="2FC-xF-Wof" secondAttribute="trailing" constant="-16" id="q0p-OX-wGe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="homeTableView" destination="dvF-cs-Baa" id="Lc1-Sp-wbF"/>
+                        <outlet property="takeQuizButton" destination="2FC-xF-Wof" id="wIy-aT-9mn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9L8-SJ-V7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

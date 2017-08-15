@@ -19,7 +19,7 @@ class SplashScreenViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0) {
             if SAUserDefaults.sharedInstance.boolFor(key: .isLoggedIn) == false {
                 SAStoryboardFactory().presentOnboarding(in: self.navigationController)
-            } else if SAUserDefaults.sharedInstance.boolFor(key: .hasUserTakenFirstQuiz) == false {
+            } else if PFUser.current()?.hasTakenFirstQuiz == false {
                 SAStoryboardFactory().presentFirstQuizViewController(in: self.navigationController)
             } else {
                 SAStoryboardFactory().presentHomeViewController(in: self.navigationController)

@@ -9,9 +9,11 @@
 import UIKit
 
 enum ErrorCode: Int {
+    case unknown = -1
     case invalidSignup = 4201
     case invalidLogin = 4202
-    case unknown = -1
+    case parseSerializationError = 4203
+    case parseDeserializationError = 4204
 }
 
 class SAError {

@@ -11,5 +11,7 @@ import Foundation
 class SAUtilities {
     static func registerParseSubclasses() {
         QuestionDTO.registerSubclass()
+        QuizDTO.registerSubclass()
+        QuizResultsDTO.registerSubclass()
     }
 }

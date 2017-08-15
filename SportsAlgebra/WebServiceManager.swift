@@ -6,4 +6,11 @@
 //  Copyright © 2017 rresma. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class WebServiceManager {
+    static let shared = WebServiceManager()
+    
+    let quizWebService = QuizWebService()
+    let userWebService = UserWebService()
+}

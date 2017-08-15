@@ -101,7 +101,7 @@ class OnboardingViewController: UIViewController {
     }
     
     func presentNextViewController(provisioningType: SAProvisioningType) {
-        if SAUserDefaults.sharedInstance.boolFor(key: .hasUserTakenFirstQuiz) == false || provisioningType == .signup {
+        if PFUser.current()?.hasTakenFirstQuiz == false || provisioningType == .signup {
             SAStoryboardFactory().presentFirstQuizViewController(in: self.navigationController)
         } else {
             SAStoryboardFactory().presentHomeViewController(in: self.navigationController)

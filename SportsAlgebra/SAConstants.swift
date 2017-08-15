@@ -39,6 +39,13 @@ enum Sports: String {
     case hockey = "Hockey"
 }
 
+enum FirstQuiz {
+    static let favoriteTeam = "favoriteTeam"
+    static let favoriteTeamPlayer = "favoriteTeamPlayer"
+    static let favoriteTeamSport = "favoriteTeamSport"
+    static let numSportsPlayed = "numSportsPlayed"
+}
+
 protocol SAResponseType {
     
 }

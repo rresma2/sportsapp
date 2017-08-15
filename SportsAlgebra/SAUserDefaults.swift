@@ -10,7 +10,6 @@ import UIKit
 
 enum SAUserDefaultsKey: String {
     case isLoggedIn = "isLoggedIn"
-    case hasUserTakenFirstQuiz = "hasUserTakenFirstQuiz"
 }
 
 class SAUserDefaults {
