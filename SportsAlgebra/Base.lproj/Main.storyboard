@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gkC-3f-oEQ">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gkC-3f-oEQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
                 <navigationController id="gkC-3f-oEQ" customClass="SANavigationController" customModule="SportsAlgebra" customModuleProvider="target" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="z1K-S1-lol">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z1K-S1-lol">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -208,7 +208,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhY-rv-vxq">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <rect key="frame" x="-4" y="627" width="383" height="40"/>
                                 <color key="backgroundColor" red="0.72686600690000003" green="0.27512827519999999" blue="0.27458819750000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dYm-6i-O0E"/>
@@ -221,7 +221,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.078557744619999995" green="0.078557759520000006" blue="0.078557744619999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="dhY-rv-vxq" secondAttribute="trailing" constant="-16" id="5cj-iN-PBd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dhY-rv-vxq" secondAttribute="trailing" constant="-20" id="5cj-iN-PBd"/>
                             <constraint firstItem="Ftf-9c-WEV" firstAttribute="top" secondItem="0IL-ww-l6D" secondAttribute="bottom" constant="-2" id="AEh-2a-xyp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0IL-ww-l6D" secondAttribute="trailing" constant="-16" id="G95-Bq-xVy"/>
                             <constraint firstItem="dhY-rv-vxq" firstAttribute="top" secondItem="Ftf-9c-WEV" secondAttribute="bottom" id="LPR-2q-bBX"/>
@@ -230,7 +230,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Ftf-9c-WEV" secondAttribute="trailing" constant="-16" id="W5C-od-0Bh"/>
                             <constraint firstItem="Ftf-9c-WEV" firstAttribute="leading" secondItem="9YH-Xy-IfZ" secondAttribute="leadingMargin" constant="-16" id="g9I-el-hsv"/>
                             <constraint firstItem="dhY-rv-vxq" firstAttribute="bottom" secondItem="okc-hA-lWz" secondAttribute="top" id="qcN-Pm-w0r"/>
-                            <constraint firstItem="dhY-rv-vxq" firstAttribute="leading" secondItem="9YH-Xy-IfZ" secondAttribute="leadingMargin" constant="-16" id="sk9-OL-HGr"/>
+                            <constraint firstItem="dhY-rv-vxq" firstAttribute="leading" secondItem="9YH-Xy-IfZ" secondAttribute="leadingMargin" constant="-20" id="sk9-OL-HGr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -331,7 +331,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FC-xF-Wof">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <rect key="frame" x="-4" y="627" width="383" height="40"/>
                                 <color key="backgroundColor" red="0.72686600690000003" green="0.27512827519999999" blue="0.27458819750000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="S3f-6Z-e1J"/>
@@ -352,13 +352,13 @@
                             <constraint firstItem="dvF-cs-Baa" firstAttribute="top" secondItem="J55-do-v9j" secondAttribute="bottom" id="2Xl-c2-cw3"/>
                             <constraint firstItem="J55-do-v9j" firstAttribute="leading" secondItem="D6M-fD-oxt" secondAttribute="leadingMargin" constant="-16" id="40c-Xi-NAA"/>
                             <constraint firstItem="cKr-UH-e1L" firstAttribute="top" secondItem="2FC-xF-Wof" secondAttribute="bottom" id="Hzf-q5-YWC"/>
-                            <constraint firstItem="2FC-xF-Wof" firstAttribute="leading" secondItem="D6M-fD-oxt" secondAttribute="leadingMargin" constant="-16" id="P8i-Vg-HOp"/>
+                            <constraint firstItem="2FC-xF-Wof" firstAttribute="leading" secondItem="D6M-fD-oxt" secondAttribute="leadingMargin" constant="-20" id="P8i-Vg-HOp"/>
                             <constraint firstItem="2FC-xF-Wof" firstAttribute="top" secondItem="dvF-cs-Baa" secondAttribute="bottom" id="Ulj-Tj-Vk4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="J55-do-v9j" secondAttribute="trailing" constant="-16" id="WgE-EW-2Xw"/>
                             <constraint firstItem="dvF-cs-Baa" firstAttribute="leading" secondItem="D6M-fD-oxt" secondAttribute="leadingMargin" constant="-16" id="fY8-N5-ttl"/>
                             <constraint firstItem="J55-do-v9j" firstAttribute="top" secondItem="dpt-OL-ciR" secondAttribute="bottom" constant="-20" id="hh1-Lj-6uL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dvF-cs-Baa" secondAttribute="trailing" constant="-16" id="jSU-lb-DnN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2FC-xF-Wof" secondAttribute="trailing" constant="-16" id="q0p-OX-wGe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2FC-xF-Wof" secondAttribute="trailing" constant="-20" id="q0p-OX-wGe"/>
                         </constraints>
                     </view>
                     <connections>
@@ -385,7 +385,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUH-dS-Dlt">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <rect key="frame" x="-4" y="627" width="383" height="40"/>
                                 <color key="backgroundColor" red="0.72686600690000003" green="0.27512827519999999" blue="0.27458819750000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="UsE-2Z-a8F"/>
@@ -423,8 +423,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="MJK-ZW-Q4r" secondAttribute="trailing" constant="-16" id="KAw-lR-Rlj"/>
                             <constraint firstItem="MJK-ZW-Q4r" firstAttribute="leading" secondItem="wUr-1i-f4r" secondAttribute="leadingMargin" constant="-16" id="e21-RW-hVY"/>
                             <constraint firstItem="MJK-ZW-Q4r" firstAttribute="top" secondItem="QwJ-kv-DHt" secondAttribute="bottom" constant="-20" id="i2r-gI-nRw"/>
-                            <constraint firstItem="BUH-dS-Dlt" firstAttribute="leading" secondItem="wUr-1i-f4r" secondAttribute="leadingMargin" constant="-16" id="rqO-P2-1e0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BUH-dS-Dlt" secondAttribute="trailing" constant="-16" id="wsU-zH-Lgo"/>
+                            <constraint firstItem="BUH-dS-Dlt" firstAttribute="leading" secondItem="wUr-1i-f4r" secondAttribute="leadingMargin" constant="-20" id="rqO-P2-1e0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BUH-dS-Dlt" secondAttribute="trailing" constant="-20" id="wsU-zH-Lgo"/>
                         </constraints>
                     </view>
                     <connections>
