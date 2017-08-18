@@ -66,17 +66,27 @@ class QuizViewModel: NSObject {
             return
         }
         
+        let alertAction: SCLAlertAction = {
+            self.advanceQuestionIndexIfNecessary()
+        }
+        
         if let correctAnswers = currentQuestion.correctAnswers {
             if currentQuestion.checkAnswers() {
                 context.userGotCorrect(answers: correctAnswers)
+                context.record(answeredQuestion: currentQuestion)
+                SAAlertManager().showCorrectAnswerAlert(alertAction: alertAction, timeToAnswer: currentQuestion.timeToAnswer)
             } else {
                 context.userGotIncorrectAnswers(userAnswers: currentQuestion.userAnswers,
                                                 correctAnswers: correctAnswers)
+                context.record(answeredQuestion: currentQuestion)
+                SAAlertManager().showIncorrectAnswerAlert(alertAction: alertAction,
+                                                          correctAnswer: correctAnswers.first,
+                                                          userAnswer: currentQuestion.userAnswers.first)
             }
+        } else {
+            context.record(answeredQuestion: currentQuestion)
+            self.advanceQuestionIndexIfNecessary()
         }
-        context.record(answeredQuestion: currentQuestion)
-        
-        advanceQuestionIndexIfNecessary()
     }
     
     var numberOfQuestionsRemaining: UInt {

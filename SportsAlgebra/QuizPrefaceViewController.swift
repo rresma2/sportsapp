@@ -45,13 +45,7 @@ class QuizPrefaceViewController: UIViewController {
     // MARK: IBAction
     
     @IBAction func startButtonTapped(_ sender: Any) {
-        
-        let appearance = SCLAlertView.SCLAppearance(kTitleFont: SAThemeService.shared.primaryFont(size: .primary),
-                                                    kTextFont: SAThemeService.shared.primaryFont(size: .secondary),
-                                                    kButtonFont: SAThemeService.shared.primaryFont(size: .secondary),
-                                                    showCloseButton: false)
-        let alertView = SCLAlertView(appearance: appearance)
-        
+        let alertView = SCLAlertView(appearance: .default)
         
         alertView.addButton("Yes", target: self, selector: #selector(QuizPrefaceViewController.beginQuiz))
         alertView.addButton("Never mind", target: self, selector: #selector(QuizPrefaceViewController.goHome))

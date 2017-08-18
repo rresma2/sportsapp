@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="V9O-jm-EYE" customClass="QuizResultsTableViewCell" customModule="SportsAlgebra" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V9O-jm-EYE" id="HWX-28-O5V">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PO-Ni-fPN">
+                        <rect key="frame" x="24" y="16" width="50" height="47.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="EJV-bx-R2n"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="79Q-TR-2EU">
+                        <rect key="frame" x="301" y="15" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="9HP-Xx-dZf"/>
+                            <constraint firstAttribute="height" constant="50" id="LDH-wy-PyB"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Time - 5 min 20 sec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hb-gx-dVR">
+                        <rect key="frame" x="82" y="16" width="211" height="47.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="8Hb-gx-dVR" firstAttribute="top" secondItem="HWX-28-O5V" secondAttribute="topMargin" constant="8" id="1zV-eS-s5u"/>
+                    <constraint firstItem="3PO-Ni-fPN" firstAttribute="leading" secondItem="HWX-28-O5V" secondAttribute="leadingMargin" constant="16" id="MXZ-W8-rZf"/>
+                    <constraint firstItem="79Q-TR-2EU" firstAttribute="centerY" secondItem="HWX-28-O5V" secondAttribute="centerY" id="SRc-gm-1Yt"/>
+                    <constraint firstItem="79Q-TR-2EU" firstAttribute="leading" secondItem="8Hb-gx-dVR" secondAttribute="trailing" constant="8" id="T2n-H9-tHh"/>
+                    <constraint firstItem="3PO-Ni-fPN" firstAttribute="top" secondItem="HWX-28-O5V" secondAttribute="topMargin" constant="8" id="Zaj-mm-pvC"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="8Hb-gx-dVR" secondAttribute="bottom" constant="8" id="cdZ-UT-Ukz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="79Q-TR-2EU" secondAttribute="trailing" constant="16" id="gbU-g7-esk"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="3PO-Ni-fPN" secondAttribute="bottom" constant="8" id="k3c-HH-yUk"/>
+                    <constraint firstItem="8Hb-gx-dVR" firstAttribute="leading" secondItem="3PO-Ni-fPN" secondAttribute="trailing" constant="8" id="okE-eH-kK6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-70.5" y="-127"/>
+        </tableViewCell>
+    </objects>
+</document>

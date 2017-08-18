@@ -1,13 +1,9 @@
 from collections import Counter
 from collections import defaultdict
 from question import Question, GameQuestion
-from basketball_game import BasketBallGameInfo
-from basketball_formula import PlayerStatsFormula
 from remote_loader import RemoteLoader
 import json
-import random
 import sys
-
 """
 Variants
 
@@ -133,15 +129,14 @@ class GameQuestionGenerator():
 		self.away_team = self.get_away_team()
 		self.point_breakdown = self.get_point_breakdown()
 		self.total_baskets = self.get_total_baskets()
-		
+		self.create_point_distribution()
+
 		self.total_home_score = self.get_home_score()
 		self.total_away_score = self.get_away_score()
 		self.home_scores_by_quarter = self.get_home_scores_by_quarter()
 		self.away_scores_by_quarter = self.get_away_scores_by_quarter()
 		self.total_points = self.total_home_score + self.total_away_score
 		self.question_subject = 1 # 1 means game related question
-
-		self.create_point_distribution()
 		
 	def get_total_baskets(self):
 		ct = 0
@@ -159,26 +154,16 @@ class GameQuestionGenerator():
 		self.player_counter = Counter()
 		self.point_type_counter = Counter()
 		self.point_counter = Counter()
-		
-		self.total_baskets_sentence = QuestionTemplate.teams_total_baskets_format.format(total=self.total_baskets) # {} baskets were made in total by both teams
-		self.total_points_sentence = QuestionTemplate.teams_total_points_format.format(total=self.total_points) # {} points were made in total by both teams
 
 		for i in range(len(self.point_breakdown)):
 			for entry in self.point_breakdown[i]:
-				team_baskets_key = self.get_user_friendly_team_point_string(team=entry["team"], descriptor="baskets")
-				team_points_key = self.get_user_friendly_team_point_string(team=entry["team"], descriptor="points")
-				quarter_key = self.get_user_friendly_quarter_string(quarter=i)
-				player_key = self.get_user_friendly_player_string(player=entry["player"])
-				point_type_key = self.get_user_friendly_point_type(point_type=entry["point_type"])
-
-				self.team_basket_counter[team_baskets_key] += 1
-				self.team_counter[team_points_key] += entry["points"]
-				self.quarter_baskets_counter[quarter_key] += 1
-				self.quarter_counter[quarter_key] += entry["points"]
-				self.player_baskets_counter[player_key] += 1
-				self.player_counter[player_key] += entry["points"]
-				self.point_type_counter[point_type_key] += 1
-
+				self.team_basket_counter[entry["team"]] += 1
+				self.team_counter[entry["team"]] += entry["points"]
+				self.quarter_baskets_counter[i] += 1
+				self.quarter_counter[i] += entry["points"]
+				self.player_baskets_counter[entry["player"]] += 1
+				self.player_counter[entry["player"]] += entry["points"]
+				self.point_type_counter[entry["point_type"]] += 1
 		for key in self.point_type_counter:
 			if key == "FreeThrow":
 				self.point_counter[key] = self.point_type_counter[key]
@@ -215,156 +200,173 @@ class GameQuestionGenerator():
 				"points": self.point_counter[key]
 			}
 
-		self.team_basket_variants = zip(self.team_basket_counter, self.team_basket_counter.values())
-		self.team_variants = zip(self.team_counter, self.team_counter.values())
-
-		self.quarter_basket_variants = zip(self.quarter_baskets_counter, self.quarter_baskets_counter.values())
-		self.quarter_variants = zip(self.quarter_counter, self.quarter_counter.values())
-		
-		self.player_basket_variants = zip(self.player_baskets_counter, self.player_baskets_counter.values())
-		self.player_variants = zip(self.player_counter, self.player_counter.values())
-
-		self.point_type_variants = zip(self.point_type_counter, self.point_type_counter.values())
-		self.point_variants = zip(self.point_counter, self.point_counter.values())
-
 
 	def generate_questions(self):
 		questions = []
-		
-		questions += self.point_type_only_variants()
-		questions += self.team_only_variants()
-		questions += self.quarter_only_variants()
-		questions += self.player_only_variants()
 						
 		return questions
 	
-	# 106 total baskets were made. 55 were field goals. 22 were three pointers. How many free throws were there total?
-	def point_type_only_variants(self):
-		questions = []
-
-		for tup in [(self.point_type_variants, self.total_baskets_sentence, QuestionTemplate.point_type_question_format), (self.point_variants, self.total_points_sentence, QuestionTemplate.point_type_question_format)]:
-			variants, total_sentence, question_prompt = tup
-			for i in range(len(variants)):
-				answer_point_type, answer = variants[i]
-				information_in_question = [variants[j] for j in range(len(variants)) if j != i]
-				
-				templates = []
-				for info in information_in_question:
-					templates.append(QuestionTemplate.point_type_format.format(point_type_count=info[1], point_type=info[0]))
-
-				question_info_sentence = ". ".join(templates)
-				questions.append(self.create_game_question(total_sentence=total_sentence, \
-															problem_information_sentence=question_info_sentence, \
-															question_prompt=question_prompt.format(point_type=answer_point_type), \
-															correct_answer=answer))
-		return questions
-
-	# 106 total baskets were made. 47 were Away Team Baskets. How many Home Team Baskets were there total?
-	def team_only_variants(self):
-		questions = []
+	def question_for(self, player, quarter, team, point_type):
 		
-		for tup in [(self.team_basket_variants, self.total_baskets_sentence, "baskets", QuestionTemplate.point_type_question_format), (self.team_variants, self.total_points_sentence, "points", QuestionTemplate.point_type_question_format)]:
-			variants, total_sentence, descriptor, question_prompt = tup
-			for i in range(len(variants)):
-				answer_team, answer = variants[i]
-				information_in_question = [variants[j] for j in range(len(variants)) if j != i]
+		if not player and not quarter and not team and not point_type: # use total points
+			return None # irrelevant since there are no variants
+		if not player and not quarter and not team: # only use point type
+			return self.point_type_only_variants()
+		if not player and not quarter and not point_type: # only use team
+			return self.team_only_variants()
+		if not player and not team and not point_type: # only use quarter
+			return self.quarter_only_variants()
+			"""
 
-				templates = []
-				for info in information_in_question:
-					templates.append(QuestionTemplate.point_type_format.format(point_type_count=info[1], point_type=[0]))
-					
-				question_info_sentence = ". ".join(templates)
-				questions.append(self.create_game_question(total_sentence=total_sentence, \
-															problem_information_sentence=question_info_sentence, \
-															question_prompt=question_prompt.format(point_type=answer_team), \
-															correct_answer=answer))
-		return questions
+			{} <- 0, 1, 2, 3
 
-	# 106 total baskets were made. 23 baskets were in quarter 1. 26 baskets were in quarter 2. 32 baskets were in quarter 3. How many baskets in quarter 0 were there total?
-	def quarter_only_variants(self):
-		questions = []
-		for tup in [(self.quarter_basket_variants, self.total_baskets_sentence, "baskets", QuestionTemplate.point_type_question_format), (self.quarter_variants, self.total_points_sentence, "points", QuestionTemplate.point_type_question_format)]:
-			variants, total_sentence, descriptor, question_prompt = tup
-			for i in range(len(variants)):
-				answer_quarter, answer = variants[i]
-				information_in_question = [variants[j] for j in range(len(variants)) if j != i]
-				templates = []
-				for info in information_in_question:
-					point_type_count = "{count} {descriptor}".format(count=info[1], descriptor=descriptor)
-					templates.append(QuestionTemplate.point_type_format.format(point_type_count=point_type_count, point_type=info[0]))
+			TODO: 0 1 2 3 _
+			TODO: 0 1 2 _ T
+			TODO: 0 1 _ 3 T
+			TODO: 0 _ 2 3 T
+			TODO: _ 1 2 3 T
 
-				question_info_sentence = ". ".join(templates)
-				questions.append(self.create_game_question(total_sentence=total_sentence, \
-															problem_information_sentence=question_info_sentence, \
-															question_prompt=question_prompt.format(point_type="{descriptor} {quarter}".format(descriptor=descriptor, \
-																																			  quarter=answer_quarter)),
-															correct_answer=answer))
-		return questions
+			5 total questions
+			******* Potentially 10, for points vs. ct
 
-	# This variant is between player and the sum of the scores of the other players
-	# total_baskets_format = "{total} total baskets were made"
-	# player_question_format = "How many {point_type} did {subject} make?"
-	# total_player_baskets_format = "{player} made {ct} total baskets"
-	def player_only_variants(self):
-		questions = []
-		for tup in [(self.player_basket_variants, self.total_baskets_sentence, "baskets", QuestionTemplate.player_question_format), (self.player_variants, self.total_points_sentence, "points", QuestionTemplate.player_question_format)]:
-			variants, total_sentence, descriptor, question_prompt = tup
-			for i in range(len(variants)):
-				player, ct = variants[i]
-				information_in_question = [variants[j] for j in range(len(variants)) if j != i]
-				correct_answer = sum([tup[1] for tup in information_in_question])
+			"""
 
-				# 100 baskets were made in total by both teams. Kobe Bryant made {} total baskets. How many points did the rest of the players make??
-				player_sentence = QuestionTemplate.player_score_format.format(player=player, \
-																			  ct=ct, \
-																			  descriptor=descriptor)
-				questions.append(self.create_game_question(total_sentence=total_sentence, \
-														   problem_information_sentence=player_sentence, \
-														   question_prompt=question_prompt.format(descriptor=descriptor, \
-																								  subject="the rest of the team"), \
-														   correct_answer=correct_answer))
-		return questions
+		if not quarter and not team and not point_type: # only use player
+			"""
 
-	def create_game_question(self, total_sentence, problem_information_sentence, question_prompt, correct_answer):
-		combined = "{}. {}. {}".format(total_sentence, problem_information_sentence, question_prompt)
-		# print combined, "({answer})".format(answer=correct_answer)
-		return GameQuestion(text=combined, \
-							correct_answer=correct_answer, \
-							question_subject=self.question_subject, \
-							question_type=3, \
-							game_id=self.game_id, \
-							game_title=self.game_title, \
-							game_location=self.game_location, \
-							game_date=self.game_date)
-		
-	
+			{} <- players
+
+			TODO: Player RestOfTeam _
+			TODO: Player _ T
+			TODO: _ RestOfTeam T
+
+			3 total questions
+			******* Potentially 6, for points vs. ct
+
+			"""
+
+		if not player and not quarter: # only use team and point type
+			
+			"""
+
+			{} <- ThreePointer, FieldGoal, FreeThrow
+
+			TODO: {}_home + {}_away = _
+			TODO: {}_home + _ = {}_both
+			TODO: _ + {}_away = {}_both
+
+			9 total questions
+			******* Potentially 18, for points vs. ct
+
+			"""
+			
+
+		if not quarter and not team: # only use player and point type
+			
+			"""
+
+			{} <- ThreePointer, FieldGoal, FreeThrow
+			{} <- Player
+
+			TODO: Example: P1 made 2 three pointers, _ field goals, 1 free throw and 10 points
+
+			p * 3 - total questions
+			******* Potentially 2 * (p*3), for points vs. ct
+
+			"""
+
+		if not team and not point_type: # only use player and quarter
+			
+			"""
+
+			{} <- 0, 1, 2, 3
+			{} <- Player
+
+			TODO: Example: P1 made 1 total in Q1, 2 total in Q2, 3 total in Q3, How many _ Total?
+			TODO: Example: P1 made 1 total in Q1, 2 total in Q2, _ in Q3, How many 10 Total?
+			TODO: Example: P1 made 1 total in Q1, _ total in Q2, 3 in Q3, How many 10 Total?
+			TODO: Example: P1 made _ total in Q1, 2 total in Q2, 3 in Q3, How many 10 Total?
+
+			p * 4 - total questions
+			******* Potentially 2 * (p*4), for points vs. ct
+
+			"""
+
+		if not player and not team: # only use quarter and point type
+
+			"""
+
+			{} <- 0, 1, 2, 3
+			{} <- ThreePointer, FieldGoal, FreeThrow
+			{} <- Points, Ct
+
+			TODO: Example: 1 ThreePointer in {}, 2 FieldGoal in {}, 3 FreeThrow in {}, How many _ total in {}?
+			TODO: Example: _ ThreePointer in {}, 2 FieldGoal in {}, 3 FreeThrow in {}, How many 9 total in {}?
+			TODO: Example: 1 ThreePointer in {}, _ FieldGoal in {}, 3 FreeThrow in {}, How many 9 total in {}?
+			TODO: Example: 1 ThreePointer in {}, 2 FieldGoal in {}, _ FreeThrow in {}, How many 9 total in {}?
+
+			12 - total questions
+			******* Potentially 24, for points vs. ct
+
+			"""
+
+		if not quarter and not point_type: # only use player and team
+			return None # irrelevant question since every player is on exactly one team
+			
+		if not player and not point_type: # only use team and quarter
+			"""
+
+			{} <- 0, 1, 2, 3
+
+			TODO: home_q1 + home_q2 + home_q3 + home_q4 = _
+			TODO: home_q1 + home_q2 + home_q3 + _ = total
+			TODO: home_q1 + home_q2 + _ + home_q4 = total
+			TODO: home_q1 + _ + home_q3 + home_q4 = total
+			TODO: _ + home_q2 + home_q3 + home_q4 = total
+
+			TODO: away_q1 + away_q2 + away_q3 + away_q4 = _
+			TODO: away_q1 + away_q2 + away_q3 + _ = total
+			TODO: away_q1 + away_q2 + _ + away_q4 = total
+			TODO: away_q1 + _ + away_q3 + away_q4 = total
+			TODO: _ + away_q2 + away_q3 + away_q4 = total
+
+			10 total questions
+			******* Potentially 20, for points vs. ct
+
+			"""
+			
+
+		if not player: # use quarter, team, point_type
+			"""
+
+			{} <- 0, 1, 2, 3
+			{} <- ThreePointer, FieldGoal, FreeThrow
+			{} <- Players()
+
+			TODO: Example: in {quarter}, {player} made 3 ThreePointers, 2 FieldGoals, and 1 FreeThrow, how many Total?
+			TODO: Example: In Q1, {player} made 3 ThreePointers, in Q2, {player} made 2 ThreePointers, in Q3... How many total
+			TODO: Example: 51 points of three pointers were made among 3 players. If {player1} made 2 three pointers, and {player2} made 4 three pointers, how many points total did {player3} make?
+
+			10 total questions
+			******* Potentially 20, for points vs. ct
+
+			"""
+
+
+		if not quarter: # use player, team, point_type
+			return None # irrelevant since player and team aren't mutually exlusive
+		if not team: # use player, quarter, point_type
+			pass
+		if not point_type: # use player, quarter, team
+			return None # irrelevant since player and team aren't mutually exlusive
+
+		return # use all of them
+
+
+
 	# if quarter is None, use all quarters
 	# if player is not None, make sure to check if the entry["player"] == player
 	# if team is not None, make sure to check if the entry["team"] == team
-
-	def aggregate_player_stats(self):
-		player_dict = defaultdict(Counter)
-		for quarter_totals in self.point_breakdown:
-			for entry in quarter_totals:
-				player_dict[self.get_user_friendly_player_string(entry["player"])][entry["point_type"]] += 1
-
-		filtered_player_dict = defaultdict(Counter)
-		for player in player_dict:
-			keys = player_dict[player].keys()
-			if len(keys) > 1:
-				filtered_player_dict[player] = player_dict[player]
-		player_dict = filtered_player_dict
-		
-		# sum_dict = defaultdict(dict)
-		# for player in player_dict:
-		# 	s = 0
-		# 	s += player_dict[player]["FieldGoal"]
-		# 	s += player_dict[player]["FreeThrow"]
-		# 	s += player_dict[player]["ThreePointer"]
-		# 	sum_dict[player]["Total"] = s
-		# for player in sum_dict:
-		# 	player_dict[player]["Total"] = sum_dict[player]["Total"]
-		return player_dict
 	
 	def aggregate_scores(self, player, quarter, team, point_type, sums_total_score):
 		indices = [quarter] or [i for i in range(len(self.point_breakdown))]
@@ -455,6 +457,7 @@ class GameQuestionGenerator():
 			quarter_list.append(quarter_totals)
 		return quarter_list
 				
+
 	def get_team_from_play_dict(self, play_dict):
 		if play_dict["teamAbbreviation"] == self.away_team:
 			return "away"
@@ -537,37 +540,18 @@ with open('sample_game.json') as data_file:
 	game = json.load(data_file)
 	generator = GameQuestionGenerator(game=game, game_id="20161025-NYK-CLE")
 	questions = generator.generate_questions()
-	game = BasketBallGameInfo(generator=generator)	
-	player_stats = generator.aggregate_player_stats()
 
-	basketball_formula_questions = []
-	for player in player_stats:
-		three_pointers = player_stats[player]["ThreePointer"]
-		field_goals = player_stats[player]["FieldGoal"]
-		free_throws = player_stats[player]["FreeThrow"]
-
-		formula = PlayerStatsFormula(game=game, \
-									 three_pointers=three_pointers, \
-									 field_goals=field_goals, \
-									 free_throws=free_throws, \
-									 player=player)
-
-		# print formula.get_variable_definition_string()
-		# print formula.get_formula_string()
-		# print formula.get_in_terms_sentence(formula.point_types[0])
-		basketball_formula_questions += formula.create_questions()
 	# first_quiz_generator = FirstQuizGenerator()
 	# first_quiz_questions = first_quiz_generator.generate_questions()
 	# print generator.point_breakdown
 	if generator.validate():
-		questions += basketball_formula_questions
-		
-		for i in range(random.choice([i for i in range(10)])):
-			random.shuffle(questions)
-
 		print "Success!" 
 		print "Uploading {ct} questions".format(ct=len(questions))
 		loader = RemoteLoader()
+		
+		# for question in first_quiz_questions:
+		# 	loader.create_object(class_name="Question", params=question.dictionary())
+
 		for question in questions:
 			loader.create_object(class_name="Question", params=question.dictionary())
 			

@@ -55,7 +55,7 @@ class QuestionDTOTests: XCTestCase {
             XCTAssertEqual(objects!.count, 4)
             
             for (i, object) in objects!.enumerated() {
-                let observedQuestion = try! Question(questionDTO: object as! QuestionDTO)!
+                let observedQuestion = try! Question(questionDTO: object as! QuestionDTO)
                 let expectedQuestion = quiz.questions[i]
                 XCTAssertEqual(expectedQuestion.text, observedQuestion.text)
                 XCTAssertEqual(expectedQuestion.answers, observedQuestion.answers)
