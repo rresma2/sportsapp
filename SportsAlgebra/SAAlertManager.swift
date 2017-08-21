@@ -23,7 +23,6 @@ class SAAlertManager {
         } else {
             alertView.showError("Oops!", subTitle: "Your answer wasn't correct :( Nice try, though!")
         }
-        
     }
     
     func showCorrectAnswerAlert(alertAction: @escaping SCLAlertAction,
@@ -33,10 +32,36 @@ class SAAlertManager {
         alertView.addButton("Awesome!", action: alertAction)
         
         if let timeToAnswerString = timeToAnswer?.stringByRoundingBy(numberOfPlaces: 1) {
-            alertView.showError("Nice job!", subTitle: "Your answer was correct! It took you \(timeToAnswerString) seconds to solve the problem.")
+            alertView.showSuccess("Nice job!", subTitle: "Your answer was correct! It took you \(timeToAnswerString) seconds to solve the problem.")
         } else {
-            alertView.showError("Nice job!", subTitle: "Your answer was correct!")
+            alertView.showSuccess("Nice job!", subTitle: "Your answer was correct!")
         }
+    }
+    
+    func showRetryQuizPrompt(alertAction: @escaping SCLAlertAction) {
+        let alertView = SCLAlertView(appearance: .default)
+        alertView.addButton("OK", action: alertAction)
+        alertView.addButton("Cancel", action: {})
+        alertView.showNotice("You are about to retake this quiz. Are you ready?", subTitle: "", circleIconImage: #imageLiteral(resourceName: "ic_priority_high_white"))
+    }
+    
+    func showGenericError(alertAction: @escaping SCLAlertAction = {_ in}) {
+        let alertView = SCLAlertView(appearance: .default)
+        alertView.addButton("OK", action: alertAction)
+        alertView.showError("Uh oh.", subTitle: "Something went wrong. Please try again later")
+    }
+    
+    func failedToRetrieveQuizError(alertAction: @escaping SCLAlertAction = {_ in}) {
+        let alertView = SCLAlertView(appearance: .default)
+        alertView.addButton("OK", action: alertAction)
+        alertView.showError("Error", subTitle: "We failed to retrieve your quiz. Please try again later.")
+    }
+    
+    func showExitQuizAlert(alertAction: @escaping SCLAlertAction) {
+        let alertView = SCLAlertView(appearance: .default)
+        alertView.addButton("Back to Home", action: alertAction)
+        alertView.addButton("Keep Going", action: {})
+        alertView.showNotice("Are you sure you want to exit? Your progress will not be saved.", subTitle: "", circleIconImage: #imageLiteral(resourceName: "ic_priority_high_white"))
     }
 }
 

@@ -44,11 +44,15 @@ class QuizPrefaceViewController: UIViewController {
     
     // MARK: IBAction
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func startButtonTapped(_ sender: Any) {
         let alertView = SCLAlertView(appearance: .default)
         
         alertView.addButton("Yes", target: self, selector: #selector(QuizPrefaceViewController.beginQuiz))
-        alertView.addButton("Never mind", target: self, selector: #selector(QuizPrefaceViewController.goHome))
+        alertView.addButton("Cancel", target: self, selector: #selector(QuizPrefaceViewController.goHome))
         alertView.showNotice("Are you ready to begin?", subTitle: "", circleIconImage: #imageLiteral(resourceName: "ic_priority_high_white"))
     }
     

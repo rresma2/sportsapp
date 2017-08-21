@@ -122,4 +122,33 @@ class SAStoryboardFactory {
                                      context: context)
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func presentQuizPreviewController(in presentingViewController: UIViewController, with quiz: Quiz, previewIndex: Int, userAnswer: Answer) {
+        guard previewIndex < quiz.questions.count else {
+            SALog("Preview index is out of bounds")
+            return
+        }
+        
+        let vc: QuizViewController = self.instantiateViewController()
+        let context = QuizContext(timePerQuestion: 120.0, previewMode: true)
+        vc.context = context
+        let viewModel = QuizViewModel(quiz: quiz,
+                                      context: context,
+                                      questionIndex: previewIndex)
+        viewModel.userAnswer = userAnswer
+        vc.viewModel = viewModel
+        vc.previewIndex = previewIndex
+        presentingViewController.present(vc, animated: true)
+    }
+    
+    func presentQuizResultsViewController(in navigationController: UINavigationController?, with quizResults: QuizResults) {
+        guard let navigationController = navigationController else {
+            return
+        }
+        
+        let vc: QuizResultsViewController = self.instantiateViewController()
+        vc.viewModel = QuizResultsViewModel(quizResults: quizResults)
+        navigationController.pushViewController(vc, animated: true)
+        
+    }
 }

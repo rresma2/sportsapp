@@ -141,8 +141,9 @@ class QuizWebService {
             } else if let questionDTO = object as? QuestionDTO {
                 if let gameId = questionDTO.gameId {
                     self.createGameQuiz(gameId: gameId, completion: completion)
+                } else {
+                    // If necessary, we shall create a custom quiz for players
                 }
-                // TODO: create one for players
             }
         }
     }
@@ -166,6 +167,7 @@ class QuizWebService {
                     let currentQuiz = try Quiz(questions: questionDTOList.map({ try Question.init(questionDTO: $0) }))
                     let quizDTO = try QuizDTO(quiz: currentQuiz)
                     quizDTO.saveInBackground(block: { (success, error) in
+                        currentQuiz.serverId = quizDTO.objectId
                         completion(currentQuiz, nil)
                     })
                 } catch is QuestionDTOError {

@@ -52,6 +52,7 @@ class Quiz {
         self.questions = try quizDTO.questions.flatMap({ ($0 as? QuestionDTO) }).map({ try Question(questionDTO: $0) })
         self.createdAt = quizDTO.createdAt
         self.title = self.questions.first?.quizTitle
+        self.serverId = quizDTO.objectId
     }
     
     func questionFor(index: Int) -> Question? {

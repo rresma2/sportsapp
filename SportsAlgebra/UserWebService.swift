@@ -10,12 +10,14 @@ import UIKit
 
 class UserWebService {
     func getUserQuizResults(user: PFUser, limit: Int, page: Int, completion: @escaping ([QuizResults]?, SAError?) -> Void) {
+        
         let query = PFQuery(className: "QuizResults")
         query.limit = limit
         query.skip = page * limit
         query.whereKey("user", equalTo: user)
         query.includeKey("user")
         query.includeKey("quiz")
+        query.includeKey("quiz.questions")
         
         query.findObjectsInBackground { (objects, error) in
             if let error = error {

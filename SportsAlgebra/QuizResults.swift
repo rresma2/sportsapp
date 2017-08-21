@@ -9,6 +9,9 @@
 import UIKit
 
 class QuizResults {
+    
+    // MARK: Properties
+    
     var quiz: Quiz!
     var quizId: String?
     var title: String?
@@ -18,6 +21,17 @@ class QuizResults {
     var totalNumberOfQuestions: Int
     var numberCorrect: Int
     var dateTaken: Date?
+    
+    // MARK: Computed Properties
+    
+    var score: Int {
+        return Int(Double(numberCorrect) / Double(totalNumberOfQuestions) * 100)
+    }
+    var scoreString: String {
+        return "\(score)"
+    }
+    
+    // MARK: Init
     
     init(quiz: Quiz, user: PFUser, dateTaken: Date?) {
         self.quiz = quiz
@@ -44,5 +58,17 @@ class QuizResults {
         self.title = quizResults.title
     }
     
+    // MARK: QuizResults
     
+    func questionFor(index: Int) -> Question? {
+        return quiz?.questionFor(index: index)
+    }
+    
+    func questionResponseFor(index: Int) -> QuestionResponse? {
+        guard index < self.questionResponses.count else {
+            return nil
+        }
+        
+        return self.questionResponses[index]
+    }
 }

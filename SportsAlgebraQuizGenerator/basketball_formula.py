@@ -48,6 +48,7 @@ class BasketballFormula():
 		self.point_types = [ThreePointer(variable_name="x", value=self.three_pointers),
 							FieldGoal(variable_name="y", value=self.field_goals),
 							FreeThrow(variable_name="z", value=self.free_throws)]
+		self.valid_point_types = [point_type for point_type in self.point_types if point_type.value > 0]
 
 		self.total = self.three_pointers * 3 + self.field_goals * 2 + self.free_throws
 
@@ -102,7 +103,7 @@ class PlayerStatsFormula(BasketballFormula):
 		return questions
 	
 	def get_in_terms_sentence(self, current_point_type):
-		all_variable_names = [point_type.variable_name for point_type in self.point_types]
+		all_variable_names = [point_type.variable_name for point_type in self.valid_point_types]
 		remaining_variable_names = [variable_name for variable_name in all_variable_names if variable_name != current_point_type.variable_name]
 
 		if len(remaining_variable_names) == 1:
@@ -113,16 +114,15 @@ class PlayerStatsFormula(BasketballFormula):
 		return "Express {answer_variable_name} in terms of {remaining_variable_names_string}.".format(answer_variable_name=current_point_type.variable_name, \
 																	  								remaining_variable_names_string=remaining_variable_names_string)
 	def solve_for_variable(self, variable_name):
-		valid_point_types = [point_type for point_type in self.point_types if point_type.value > 0]
-		if variable_name not in [point_type.variable_name for point_type in valid_point_types]:
+		if variable_name not in [point_type.variable_name for point_type in self.valid_point_types]:
 			print "Couldn't find original variable name. Returning None"
 			return None
 		
-		other_point_types = [point_type for point_type in valid_point_types if point_type.variable_name != variable_name]
+		other_point_types = [point_type for point_type in self.valid_point_types if point_type.variable_name != variable_name]
 		formula_list = ["-{formula}".format(formula=point_type.total_points_formula()) for point_type in other_point_types]
 		rest = "".join(formula_list)
 
-		target_point_type = [point_type for point_type in valid_point_types if point_type.variable_name == variable_name][0]
+		target_point_type = [point_type for point_type in self.valid_point_types if point_type.variable_name == variable_name][0]
 		if target_point_type.multiplier > 1:
 			return "({total}{rest})/{multiplier}".format(total=self.total, \
 														 rest=rest, \

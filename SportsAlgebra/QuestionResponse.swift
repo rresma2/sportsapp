@@ -37,4 +37,8 @@ class QuestionResponse {
         }
         return response
     }
+    
+    var userResponse: String {
+        return self.userAnswers.first?["text"] ?? ""
+    }
 }

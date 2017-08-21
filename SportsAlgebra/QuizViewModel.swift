@@ -14,8 +14,9 @@ class QuizViewModel: NSObject {
     var context: QuizContext
     var tableView: UITableView!
     
+    var userAnswer: Answer?
     var currentQuestionIndexChanged = Event<Int>()
-    var currentQuestionIndex = 0 {
+    var currentQuestionIndex: Int {
         willSet {
             currentQuestionIndexChanged.raise(data: newValue)
         }
@@ -36,7 +37,9 @@ class QuizViewModel: NSObject {
                     cell.configure(answer: answer,
                                    questionType: question.questionType,
                                    context: context,
-                                   textFieldDelegate: self)
+                                   textFieldDelegate: self,
+                                   userAnswer: userAnswer,
+                                   correctAnswer: question.correctAnswers?.first)
                     header.configureFor(question: question, context: context)
                 } else {
                     tableView.reloadData()
@@ -45,9 +48,10 @@ class QuizViewModel: NSObject {
         }
     }
     
-    init(quiz: Quiz, context: QuizContext) {
+    init(quiz: Quiz, context: QuizContext, questionIndex: Int = 0) {
         self.quiz = quiz
         self.context = context
+        self.currentQuestionIndex = questionIndex
     }
     
     func configure(tableView: UITableView) {
@@ -110,6 +114,10 @@ class QuizViewModel: NSObject {
 
 extension QuizViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard userAnswer == nil else {
+            return
+        }
+        
         if let question = quiz.questionFor(index: currentQuestionIndex) {
             if !question.questionType.isInput {
                 self.didSelectMultipleChoiceAnswerAt(indexPath: indexPath,
@@ -145,7 +153,9 @@ extension QuizViewModel: UITableViewDataSource {
                 cell.configure(answer: answer,
                                questionType: question.questionType,
                                context: context,
-                               textFieldDelegate: self)
+                               textFieldDelegate: self,
+                               userAnswer: userAnswer,
+                               correctAnswer: question.correctAnswers?.first)
             cell.questionChangeListener = self.currentQuestionIndexChanged.addHandler(target: cell, handler: QuizTableViewCell.questionIndexDidChange)
         }
         

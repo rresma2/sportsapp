@@ -46,6 +46,21 @@
                         <constraint firstAttribute="width" constant="16" id="odE-T3-CW9"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o44-th-Iu1">
+                    <rect key="frame" x="349" y="44" width="16" height="16"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="FPj-lt-j2q"/>
+                        <constraint firstAttribute="height" constant="16" id="r1T-Qu-3My"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1h9-Kr-kxc">
+                    <rect key="frame" x="342" y="37" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZX2-P0-ams"/>
+                        <constraint firstAttribute="width" constant="30" id="hgy-oh-qRA"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -54,20 +69,26 @@
                 <constraint firstAttribute="trailing" secondItem="VX3-aI-BxO" secondAttribute="trailing" constant="28" id="Chv-XQ-Jn2"/>
                 <constraint firstAttribute="trailing" secondItem="Imf-J2-1L0" secondAttribute="trailing" constant="20" id="Hyi-3v-EoD"/>
                 <constraint firstAttribute="bottom" secondItem="BbI-29-dSI" secondAttribute="bottom" id="JQw-RG-D9N"/>
+                <constraint firstItem="o44-th-Iu1" firstAttribute="centerY" secondItem="1h9-Kr-kxc" secondAttribute="centerY" id="LBs-kP-JFR"/>
                 <constraint firstAttribute="trailing" secondItem="BbI-29-dSI" secondAttribute="trailing" constant="8" id="UdK-wH-Dgw"/>
                 <constraint firstItem="BbI-29-dSI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="oWg-yL-Wu3"/>
                 <constraint firstItem="Imf-J2-1L0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="qOn-v4-qdH"/>
                 <constraint firstAttribute="bottom" secondItem="Imf-J2-1L0" secondAttribute="bottom" constant="20" id="sYi-Il-9NL"/>
+                <constraint firstItem="1h9-Kr-kxc" firstAttribute="centerY" secondItem="VX3-aI-BxO" secondAttribute="centerY" id="sYm-1n-CHD"/>
                 <constraint firstItem="Imf-J2-1L0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="xgt-4A-mh1"/>
+                <constraint firstAttribute="trailing" secondItem="1h9-Kr-kxc" secondAttribute="trailing" constant="21" id="xyV-JX-WUk"/>
+                <constraint firstItem="o44-th-Iu1" firstAttribute="centerX" secondItem="1h9-Kr-kxc" secondAttribute="centerX" id="yiC-vs-TlC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="answerLabel" destination="Imf-J2-1L0" id="W72-uI-Rb4"/>
                 <outlet property="answerTextField" destination="BbI-29-dSI" id="xtf-xH-eAX"/>
+                <outlet property="correctionStateBackground" destination="o44-th-Iu1" id="BYu-4s-XZg"/>
+                <outlet property="correctionStateImageView" destination="1h9-Kr-kxc" id="acb-1K-Xiu"/>
                 <outlet property="iconView" destination="cDH-Am-Tq7" id="yJ4-VW-S8V"/>
                 <outlet property="iconWrapperView" destination="VX3-aI-BxO" id="yke-8f-WvO"/>
             </connections>
-            <point key="canvasLocation" x="64.5" y="-255"/>
+            <point key="canvasLocation" x="97" y="-253"/>
         </view>
     </objects>
     <resources>

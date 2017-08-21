@@ -23,9 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initialize(with: configuration)
         PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
         SAUtilities.registerParseSubclasses()
+        UIApplication.shared.statusBarStyle = .lightContent
         
         if PFUser.current() != nil {
-            SAUserDefaults.sharedInstance.set(bool: true, for: .isLoggedIn)
+            do {
+                try PFUser.current()?.fetch()
+                SAUserDefaults.sharedInstance.set(bool: true, for: .isLoggedIn)
+                SALog("Successfully refreshed current user")
+            } catch {
+                SALog("Failed to refresh user")
+                SAUserDefaults.sharedInstance.set(bool: false, for: .isLoggedIn)
+            }
+            
+        } else {
+            SAUserDefaults.sharedInstance.set(bool: false, for: .isLoggedIn)
         }
         
         return true

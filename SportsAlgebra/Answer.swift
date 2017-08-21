@@ -47,6 +47,11 @@ class Answer: NSObject {
         self.text = "\(int)"
     }
     
+    init(questionResponse: QuestionResponse) {
+        self.text = questionResponse.userAnswers.first?["text"] ?? ""
+        self.label = questionResponse.userAnswers.first?["label"] ?? ""
+    }
+    
     // MARK: Equatable
     
     override func isEqual(_ object: Any?) -> Bool {

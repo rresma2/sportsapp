@@ -85,6 +85,19 @@ extension PFUser {
         return self.object(forKey: "fullName") as? String ?? self.username ?? ""
     }
     
+    var daysSinceAccountCreation: Int? {
+        guard let signUpDate = self.createdAt else {
+            return nil
+        }
+        
+        let calendar = NSCalendar.current
+        let date1 = calendar.startOfDay(for: signUpDate)
+        let date2 = calendar.startOfDay(for: Date())
+        
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        return components.day
+    }
+    
     func saveProfile(image: UIImage, completion: @escaping (Bool, SAError?) -> Void) {
         
         // create image data

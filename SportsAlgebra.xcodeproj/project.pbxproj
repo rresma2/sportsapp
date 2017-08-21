@@ -75,6 +75,9 @@
 		A5D88EB81F1AB48A0088901B /* SAUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB71F1AB48A0088901B /* SAUtilities.swift */; };
 		A5D88EBA1F1AB4B60088901B /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB91F1AB4B60088901B /* Notification+Extensions.swift */; };
 		A5D88EBC1F1AB89D0088901B /* OnboardingFadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EBB1F1AB89D0088901B /* OnboardingFadeAnimator.swift */; };
+		A5EB7E2D1F479740009F0F88 /* SADateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB7E2C1F479740009F0F88 /* SADateFormatter.swift */; };
+		A5EB7E301F47F165009F0F88 /* UserStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB7E2F1F47F165009F0F88 /* UserStatsViewController.swift */; };
+		A5EB7E321F47F1AC009F0F88 /* UserStatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EB7E311F47F1AC009F0F88 /* UserStatsViewModel.swift */; };
 		A6313DE91F4616D2000E0766 /* SAAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313DE81F4616D2000E0766 /* SAAlertManager.swift */; };
 		A6313DEB1F461B30000E0766 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313DEA1F461B30000E0766 /* Double+Extensions.swift */; };
 		A6313DED1F461BE9000E0766 /* DoubleExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6313DEC1F461BE9000E0766 /* DoubleExtensionsTests.swift */; };
@@ -184,6 +187,9 @@
 		A5D88EB91F1AB4B60088901B /* Notification+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 		A5D88EBB1F1AB89D0088901B /* OnboardingFadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingFadeAnimator.swift; sourceTree = "<group>"; };
 		A5D88EBD1F1ACE760088901B /* SCLAlertView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCLAlertView.framework; path = "Pods/../build/Release-iphoneos/SCLAlertView/SCLAlertView.framework"; sourceTree = "<group>"; };
+		A5EB7E2C1F479740009F0F88 /* SADateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SADateFormatter.swift; sourceTree = "<group>"; };
+		A5EB7E2F1F47F165009F0F88 /* UserStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStatsViewController.swift; sourceTree = "<group>"; };
+		A5EB7E311F47F1AC009F0F88 /* UserStatsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStatsViewModel.swift; sourceTree = "<group>"; };
 		A6313DE81F4616D2000E0766 /* SAAlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAAlertManager.swift; sourceTree = "<group>"; };
 		A6313DEA1F461B30000E0766 /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		A6313DEC1F461BE9000E0766 /* DoubleExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensionsTests.swift; sourceTree = "<group>"; };
@@ -318,6 +324,7 @@
 		A5287CC01F06C20500466BCB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A5EB7E2E1F47F156009F0F88 /* UserStats */,
 				A6313DEE1F4628C0000E0766 /* QuizResults */,
 				A6E7D5CA1F43971800041252 /* QuizPreface */,
 				A564E00D1F1AD6CD0025D451 /* Quiz */,
@@ -371,6 +378,7 @@
 				A564E0211F1AFECA0025D451 /* FirstQuizGenerator.swift */,
 				A564E0231F1B14650025D451 /* Event.swift */,
 				A6313DE81F4616D2000E0766 /* SAAlertManager.swift */,
+				A5EB7E2C1F479740009F0F88 /* SADateFormatter.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -513,6 +521,15 @@
 				A6E7D5791F43777400041252 /* SCLExtensions.swift */,
 			);
 			name = SCLAlertView;
+			sourceTree = "<group>";
+		};
+		A5EB7E2E1F47F156009F0F88 /* UserStats */ = {
+			isa = PBXGroup;
+			children = (
+				A5EB7E2F1F47F165009F0F88 /* UserStatsViewController.swift */,
+				A5EB7E311F47F1AC009F0F88 /* UserStatsViewModel.swift */,
+			);
+			name = UserStats;
 			sourceTree = "<group>";
 		};
 		A6313DEE1F4628C0000E0766 /* QuizResults */ = {
@@ -759,6 +776,7 @@
 				A59C25C21F3F71FC007F4EAD /* PFUser+Extensions.swift in Sources */,
 				A6313DEB1F461B30000E0766 /* Double+Extensions.swift in Sources */,
 				A5287CD01F11B52800466BCB /* SplashScreenViewController.swift in Sources */,
+				A5EB7E2D1F479740009F0F88 /* SADateFormatter.swift in Sources */,
 				A59C25B21F2A42D7007F4EAD /* QuestionResponse.swift in Sources */,
 				A5287CCE1F11B03600466BCB /* UIColor+Extensions.swift in Sources */,
 				A5287CC71F06C2BC00466BCB /* Quiz.swift in Sources */,
@@ -767,6 +785,7 @@
 				A6313DF51F4629C0000E0766 /* QuizResultsTableViewCell.swift in Sources */,
 				A5D88EBC1F1AB89D0088901B /* OnboardingFadeAnimator.swift in Sources */,
 				A564E0241F1B14650025D451 /* Event.swift in Sources */,
+				A5EB7E301F47F165009F0F88 /* UserStatsViewController.swift in Sources */,
 				A5CE344B1F21185D00AE5040 /* OnboardingViewController+Observers.swift in Sources */,
 				A59C25AC1F265E55007F4EAD /* QuizWebService.swift in Sources */,
 				A5D88E841F121D8D0088901B /* SAUserDefaults.swift in Sources */,
@@ -782,6 +801,7 @@
 				A5287CC51F06C2A300466BCB /* Answer.swift in Sources */,
 				A59C25B01F29A9FF007F4EAD /* QuizResults.swift in Sources */,
 				A5CE34461F21181E00AE5040 /* QuizViewController+Observers.swift in Sources */,
+				A5EB7E321F47F1AC009F0F88 /* UserStatsViewModel.swift in Sources */,
 				A5D88EAE1F15A3E90088901B /* OnboardingViewModel.swift in Sources */,
 				A5D88E8B1F1222F30088901B /* SAStoryboardFactory.swift in Sources */,
 				A5287CBF1F06C1DF00466BCB /* SAThemeService.swift in Sources */,

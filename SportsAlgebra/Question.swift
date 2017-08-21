@@ -158,6 +158,7 @@ class Question {
         self.gameDate = questionDTO.gameDate ?? nil
         self.gameLocation = questionDTO.gameLocation ?? nil
         self.gameDate = questionDTO.gameDate ?? nil
+        self.gameTitle = questionDTO.gameTitle ?? nil
         
         self.userAnswers = []
         self.isRequired = questionDTO.isRequired.boolValue
@@ -174,6 +175,14 @@ class Question {
         }
         
         return answers[index]
+    }
+    
+    func userAnswerFor(index: Int) -> Answer? {
+        guard index < userAnswers.count else {
+            return nil
+        }
+        
+        return userAnswers[index]
     }
     
     func checkAnswers() -> Bool {

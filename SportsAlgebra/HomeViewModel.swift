@@ -9,16 +9,25 @@
 import Foundation
 
 class HomeViewModel: NSObject {
+    
+    // MARK: Properties
+    
     var tableView: UITableView!
     var dataSource = [QuizResults]()
+    var didSelectBlock: ((QuizResults) -> Void)?
+    var retryQuizBlock: ((Quiz) -> Void)?
     var page = 0
     var user: PFUser
+    
+    // MARK: Init
     
     init(user: PFUser) {
         self.user = user
         
         super.init()
     }
+    
+    // MARK: HomeViewModel
     
     func fetchQuizResults() {
         guard let user = PFUser.current() else {
@@ -51,7 +60,11 @@ class HomeViewModel: NSObject {
 
 extension HomeViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Implement
+        guard indexPath.row < dataSource.count else {
+            return
+        }
+        
+        didSelectBlock?(dataSource[indexPath.row])
     }
 }
 
@@ -66,7 +79,9 @@ extension HomeViewModel: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HomeTableViewCell.self), for: indexPath) as! HomeTableViewCell
-        cell.configure(quizResults: self.dataSource[indexPath.row])
+        cell.selectionStyle = .none
+        cell.configure(quizResults: dataSource[indexPath.row])
+        cell.retryQuizBlock = retryQuizBlock
         return cell
     }
     

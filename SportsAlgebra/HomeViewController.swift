@@ -13,6 +13,11 @@ class HomeViewController: UIViewController {
     // MARK: Properties
     
     var viewModel: HomeViewModel!
+    func retryQuizBlock() -> (Quiz) -> Void {
+        return { quiz in
+            SAStoryboardFactory().presentQuizPrefaceViewController(in: self.navigationController, with: quiz)
+        }
+    }
     
     // MARK: Subviews
     
@@ -38,7 +43,6 @@ class HomeViewController: UIViewController {
         })
     }
     
-    
     // MARK: UIViewController
     
     override func viewDidLoad() {
@@ -47,5 +51,21 @@ class HomeViewController: UIViewController {
         takeQuizButton.titleLabel?.font = SAThemeService.shared.primaryFont(size: .primary)
         viewModel.fetchQuizResults()
         homeHeaderView.configure(user: PFUser.current())
+        viewModel.didSelectBlock = didSelectBlock()
+        viewModel.retryQuizBlock = retryQuizBlock()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.fetchQuizResults()
+    }
+    
+    // MARK: HomeViewController
+    
+    func didSelectBlock() -> (QuizResults) -> Void {
+        return { results in
+            SAStoryboardFactory().presentQuizResultsViewController(in: self.navigationController, with: results)
+        }
     }
 }

@@ -95,8 +95,8 @@
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
-                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
 				<key>NSExceptionRequiresForwardSecrecy</key>
 				<false/>
 			</dict>
@@ -104,8 +104,8 @@
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
-                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
 				<key>NSExceptionRequiresForwardSecrecy</key>
 				<false/>
 			</dict>
@@ -113,5 +113,7 @@
 	</dict>
 	<key>LSApplicationCategoryType</key>
 	<string>&lt;string&gt;fbauth&lt;/string&gt;</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

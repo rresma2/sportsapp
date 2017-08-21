@@ -271,7 +271,7 @@ class GameQuestionGenerator():
 
 				templates = []
 				for info in information_in_question:
-					templates.append(QuestionTemplate.point_type_format.format(point_type_count=info[1], point_type=[0]))
+					templates.append(QuestionTemplate.point_type_format.format(point_type_count=info[1], point_type=info[0]))
 					
 				question_info_sentence = ". ".join(templates)
 				questions.append(self.create_game_question(total_sentence=total_sentence, \

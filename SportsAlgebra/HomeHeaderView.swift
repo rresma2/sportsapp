@@ -52,6 +52,7 @@ class HomeHeaderView: UIView {
         self.user = user
         
         self.configureProfileImageFor(user: user)
+        self.headerLabel.text = user?.name
     }
     
     func configureProfileImageFor(user: PFUser?) {

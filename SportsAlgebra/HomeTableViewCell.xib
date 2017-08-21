@@ -22,13 +22,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• You got 8 out of 10 questions correct." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOc-Ob-2HM">
-                    <rect key="frame" x="72" y="36" width="301" height="19.5"/>
+                    <rect key="frame" x="72" y="36" width="249" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• It took you 2:30 seconds to finish." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-Wk-F3b">
-                    <rect key="frame" x="72" y="55.5" width="301" height="20"/>
+                    <rect key="frame" x="72" y="55.5" width="249" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -59,23 +59,36 @@
                         <constraint firstItem="UHd-Ib-ngr" firstAttribute="leading" secondItem="xtY-A3-FJr" secondAttribute="leading" constant="4" id="zgV-YN-VuT"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eD-dr-aB1">
+                    <rect key="frame" x="337" y="37" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="KtS-Np-hdt"/>
+                        <constraint firstAttribute="height" constant="36" id="l0S-Rb-gqP"/>
+                    </constraints>
+                    <state key="normal" image="ic_replay_white_36pt"/>
+                    <connections>
+                        <action selector="retryButtonTapped:" destination="cJo-4q-635" eventType="touchUpInside" id="Uus-EN-ubg"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="xtY-A3-FJr" firstAttribute="leading" secondItem="cJo-4q-635" secondAttribute="leading" constant="16" id="2Rc-Im-SH4"/>
+                <constraint firstItem="6eD-dr-aB1" firstAttribute="centerY" secondItem="xtY-A3-FJr" secondAttribute="centerY" id="7aY-iC-OLm"/>
                 <constraint firstItem="LLQ-Lm-ZDi" firstAttribute="height" secondItem="cOc-Ob-2HM" secondAttribute="height" id="A8P-yr-qo7"/>
-                <constraint firstAttribute="trailing" secondItem="cOc-Ob-2HM" secondAttribute="trailing" constant="20" id="BCT-ti-Gk3"/>
                 <constraint firstItem="ph1-Wk-F3b" firstAttribute="leading" secondItem="xtY-A3-FJr" secondAttribute="trailing" constant="16" id="BLc-Uh-rs9"/>
+                <constraint firstAttribute="trailing" secondItem="6eD-dr-aB1" secondAttribute="trailing" constant="20" id="Cai-1f-o0c"/>
                 <constraint firstAttribute="bottom" secondItem="LLQ-Lm-ZDi" secondAttribute="bottom" constant="8" id="Dd4-J6-Q4n"/>
                 <constraint firstAttribute="trailing" secondItem="QaM-SK-NOB" secondAttribute="trailing" constant="20" id="FhR-my-R9x"/>
                 <constraint firstItem="cOc-Ob-2HM" firstAttribute="leading" secondItem="xtY-A3-FJr" secondAttribute="trailing" constant="16" id="HB2-6h-6YC"/>
-                <constraint firstAttribute="trailing" secondItem="ph1-Wk-F3b" secondAttribute="trailing" constant="20" id="JrV-yo-nA2"/>
                 <constraint firstItem="LLQ-Lm-ZDi" firstAttribute="height" secondItem="QaM-SK-NOB" secondAttribute="height" id="P4s-oV-F1B"/>
                 <constraint firstItem="QaM-SK-NOB" firstAttribute="leading" secondItem="cJo-4q-635" secondAttribute="leading" constant="20" id="QZI-YG-z0J"/>
+                <constraint firstItem="6eD-dr-aB1" firstAttribute="leading" secondItem="ph1-Wk-F3b" secondAttribute="trailing" constant="16" id="RPz-oH-ocf"/>
                 <constraint firstItem="LLQ-Lm-ZDi" firstAttribute="top" secondItem="ph1-Wk-F3b" secondAttribute="bottom" constant="8" id="SZ3-Lb-ga7"/>
                 <constraint firstItem="xtY-A3-FJr" firstAttribute="centerY" secondItem="cJo-4q-635" secondAttribute="centerY" id="T7V-SM-UYL"/>
                 <constraint firstItem="ph1-Wk-F3b" firstAttribute="top" secondItem="cOc-Ob-2HM" secondAttribute="bottom" id="iQq-VD-aPc"/>
                 <constraint firstItem="LLQ-Lm-ZDi" firstAttribute="height" secondItem="ph1-Wk-F3b" secondAttribute="height" id="j4p-HZ-yBX"/>
+                <constraint firstItem="6eD-dr-aB1" firstAttribute="leading" secondItem="cOc-Ob-2HM" secondAttribute="trailing" constant="16" id="n2i-cy-B2M"/>
                 <constraint firstItem="cOc-Ob-2HM" firstAttribute="top" secondItem="QaM-SK-NOB" secondAttribute="bottom" constant="8" id="o2p-zJ-iGN"/>
                 <constraint firstAttribute="trailing" secondItem="LLQ-Lm-ZDi" secondAttribute="trailing" constant="20" id="xtq-xE-xxJ"/>
                 <constraint firstItem="QaM-SK-NOB" firstAttribute="top" secondItem="cJo-4q-635" secondAttribute="top" constant="8" id="yka-fO-4M0"/>
@@ -93,4 +106,7 @@
             <point key="canvasLocation" x="90.5" y="-253.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_replay_white_36pt" width="36" height="36"/>
+    </resources>
 </document>
