@@ -24,8 +24,12 @@ class UserStatsViewModel {
     
     // MARK: Properties
     
-    var user: PFUser
+    var daysSinceAccountCreation: Int
     var dataSource: [QuizResults]
+    var questions: [Question]
+    var totalScore: Int
+    var totalNumberOfSeconds: TimeInterval
+    var totalNumberOfQuestionsAnswered: Int
     
     // MARK: Aggregation Properties
     
@@ -34,71 +38,58 @@ class UserStatsViewModel {
             return nil
         }
         
-        var totalScore = 0
-        for result in dataSource {
-            totalScore += result.score
-        }
-        
         return Double(totalScore) / Double(dataSource.count)
     }
     
     var averageNumberOfSecondsPerQuestion: TimeInterval? {
-        let questions = dataSource.flatMap({ $0.quiz.questions })
         guard questions.count > 0 else {
             return nil
-        }
-        
-        var totalNumberOfSeconds = 0.0
-        for result in dataSource {
-            totalNumberOfSeconds += result.totalTimeToAnswer
         }
         
         return totalNumberOfSeconds / Double(questions.count)
     }
     
     var averageNumberOfQuestionsPerDay: Double? {
-        let questions = dataSource.flatMap({ $0.quiz.questions })
-        guard questions.count > 0,
-            let numDays = user.daysSinceAccountCreation else {
-                return nil
+        guard daysSinceAccountCreation > 0 else {
+            return nil
         }
         
-        return Double(questions.count) / Double(numDays)
+        return Double(questions.count) / Double(daysSinceAccountCreation)
     }
     
     var averageNumberOfQuizzesPerDay: Double? {
-        guard dataSource.count > 0,
-            let numDays = user.daysSinceAccountCreation else {
-                return nil
+        guard daysSinceAccountCreation > 0 else {
+            return nil
         }
         
-        return Double(dataSource.count) / Double(numDays)
+        return Double(dataSource.count) / Double(daysSinceAccountCreation)
     }
     
     var numberOfQuizzesTaken: Int {
         return self.dataSource.count
     }
     
-    var totalNumberOfQuestionsAnswered: Int {
-        var total = 0
-        for result in dataSource {
-            total += result.quiz.questions.count
-        }
-        return total
-    }
-    
-    var totalNumberOfSeconds: TimeInterval {
-        var total = 0.0
-        for result in dataSource {
-            total += result.totalTimeToAnswer
-        }
-        return total
-    }
-    
     // MARK: Init
     
-    init(user: PFUser, dataSource: [QuizResults]) {
-        self.user = user
+    init(daysSinceAccountCreation: Int, dataSource: [QuizResults]) {
+        self.daysSinceAccountCreation = daysSinceAccountCreation
         self.dataSource = dataSource
+        self.questions = dataSource.flatMap({ $0.quiz.questions })
+        
+        self.totalScore = 0
+        for result in dataSource {
+            self.totalScore += result.score
+        }
+        
+        self.totalNumberOfSeconds = 0.0
+        for result in dataSource {
+            self.totalNumberOfSeconds += result.totalTimeToAnswer
+        }
+        
+        self.totalNumberOfQuestionsAnswered = 0
+        for result in dataSource {
+            self.totalNumberOfQuestionsAnswered += result.quiz.questions.count
+        }
+        
     }
 }
