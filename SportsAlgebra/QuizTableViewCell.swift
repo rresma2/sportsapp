@@ -9,6 +9,7 @@
 import UIKit
 
 class QuizTableViewCell: UITableViewCell {
+    
     // MARK: Properties
     
     var context: QuizContext?
@@ -16,7 +17,7 @@ class QuizTableViewCell: UITableViewCell {
     var questionChangeListener: Disposable?
     var shouldResignResponderOnNextQuestion: Bool = false
     
-    // MARK: IBOutlets
+    // MARK: IBOutlet
     
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var iconWrapperView: UIView!

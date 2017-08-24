@@ -9,6 +9,9 @@
 import UIKit
 
 extension PFUser {
+    
+    // Quizzes 
+    
     var hasTakenFirstQuiz: Bool {
         return [self.object(forKey: FirstQuiz.favoriteTeam),
                 self.object(forKey: FirstQuiz.favoriteTeamPlayer),
@@ -77,13 +80,13 @@ extension PFUser {
         return true
     }
     
-    var profileImageView: PFFile? {
-        return self.object(forKey: "profileImageView") as? PFFile
-    }
+    // Display Name
     
     var name: String {
         return self.object(forKey: "fullName") as? String ?? self.username ?? ""
     }
+    
+    // Days since sign up
     
     var daysSinceAccountCreation: Int? {
         guard let signUpDate = self.createdAt else {
@@ -96,6 +99,28 @@ extension PFUser {
         
         let components = calendar.dateComponents([.day], from: date1, to: date2)
         return components.day
+    }
+    
+    // Home Town
+    
+    var homeTown: String? {
+        get {
+            return self.object(forKey: "homeTown") as? String
+        }
+        
+        set {
+            guard let newValue = newValue else {
+                return
+            }
+            
+            self.setObject(newValue, forKey: "homeTown")
+        }
+    }
+    
+    // Profile Image
+    
+    var profileImageView: PFFile? {
+        return self.object(forKey: "profileImageView") as? PFFile
     }
     
     func saveProfile(image: UIImage, completion: @escaping (Bool, SAError?) -> Void) {

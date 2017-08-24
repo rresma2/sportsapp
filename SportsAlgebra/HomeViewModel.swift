@@ -36,7 +36,7 @@ class HomeViewModel: NSObject {
             return
         }
         
-        WebServiceManager.shared.userWebService.getUserQuizResults(user: user, limit: 10, page: self.page) { (results, error) in
+        WebServiceManager.shared.userWebService.getUserQuizResults(user: user, limit: 100, page: self.page) { (results, error) in
             if let error = error {
                 SALog("Failed to fetch data with error: \(error.message)")
             } else if let quizResults = results {

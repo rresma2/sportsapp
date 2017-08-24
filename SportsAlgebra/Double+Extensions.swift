@@ -26,4 +26,14 @@ extension Double {
             return "\(minutes) min \(seconds) sec"
         }
     }
+    
+    var abbreviatedString: String {
+        if 1000 <= self && self < 1000000 {
+            return "\(Int(self / 1000))K"
+        } else if 1000000 <= self && self < 1000000000 {
+            return "\(Int(self / 1000000))M"
+        } else {
+            return "\(Int(self))"
+        }
+    }
 }
