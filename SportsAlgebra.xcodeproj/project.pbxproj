@@ -633,7 +633,7 @@
 				TargetAttributes = {
 					A5287C871F06C18A00466BCB = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5V44FMNFC4;
+						DevelopmentTeam = A2D2KA7G86;
 						ProvisioningStyle = Automatic;
 					};
 					A5287C9B1F06C18B00466BCB = {
@@ -979,14 +979,15 @@
 			baseConfigurationReference = 6D426E7DBE8DD19A9FC72298 /* Pods-SportsAlgebra.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A2D2KA7G86;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SportsAlgebra/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rresma.SportsAlgebra;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sports.2cool2fool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1001,13 +1002,14 @@
 			baseConfigurationReference = 754629DF486F0061D04BACB1 /* Pods-SportsAlgebra.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A2D2KA7G86;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SportsAlgebra/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rresma.SportsAlgebra;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sports.2cool2fool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

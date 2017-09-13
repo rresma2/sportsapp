@@ -186,6 +186,10 @@ class Question {
     }
     
     func checkAnswers() -> Bool {
+        guard userAnswers.count > 0 else {
+            return false
+        }
+        
         var allCorrect = true
         for userAnswer in userAnswers {
             allCorrect = allCorrect && (correctAnswers?.contains(userAnswer) == true)
